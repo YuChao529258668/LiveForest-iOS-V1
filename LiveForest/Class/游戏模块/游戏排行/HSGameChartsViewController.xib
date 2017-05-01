@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSGameChartsViewController">
+            <connections>
+                <outlet property="gameChartsTableView" destination="ezb-Xc-k3D" id="6lS-lm-j1e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Imn-qV-JQ3">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排行榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-bJ-25j">
+                    <rect key="frame" x="240.5" y="46" width="120" height="48"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Xc-k3D" customClass="HSTableView">
+                    <rect key="frame" x="20" y="194" width="560" height="371"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="Ogu-b4-NgX">
+                    <rect key="frame" x="180" y="109" width="240" height="18"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="jri-eR-4rW"/>
+                        <constraint firstAttribute="height" constant="18" id="oUx-fE-NRX"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日排行榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-w4-YAh">
+                    <rect key="frame" x="247" y="141" width="105" height="25.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cEV-bJ-25j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="7Ar-Jl-37m"/>
+                <constraint firstItem="WMN-w4-YAh" firstAttribute="top" secondItem="cEV-bJ-25j" secondAttribute="bottom" constant="47" id="Hgy-Eq-UME"/>
+                <constraint firstAttribute="trailing" secondItem="Imn-qV-JQ3" secondAttribute="trailing" id="Hq1-YN-euu"/>
+                <constraint firstAttribute="centerX" secondItem="ezb-Xc-k3D" secondAttribute="centerX" id="M8B-wi-Dmj"/>
+                <constraint firstAttribute="bottom" secondItem="ezb-Xc-k3D" secondAttribute="bottom" constant="35" id="Pwj-zD-TFZ"/>
+                <constraint firstAttribute="bottom" secondItem="Imn-qV-JQ3" secondAttribute="bottom" id="d7e-ee-RLA"/>
+                <constraint firstItem="cEV-bJ-25j" firstAttribute="centerX" secondItem="WMN-w4-YAh" secondAttribute="centerX" constant="1" id="ecd-rZ-tHZ"/>
+                <constraint firstAttribute="centerX" secondItem="cEV-bJ-25j" secondAttribute="centerX" id="gSp-ge-3Gf"/>
+                <constraint firstItem="Ogu-b4-NgX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jIv-e2-qz1"/>
+                <constraint firstAttribute="centerX" secondItem="WMN-w4-YAh" secondAttribute="centerX" id="ja8-qK-Msk"/>
+                <constraint firstItem="Imn-qV-JQ3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ore-Ov-dKw"/>
+                <constraint firstItem="ezb-Xc-k3D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="pSS-a6-5kV"/>
+                <constraint firstItem="Ogu-b4-NgX" firstAttribute="top" secondItem="cEV-bJ-25j" secondAttribute="bottom" constant="15" id="s2I-vo-yCp"/>
+                <constraint firstItem="ezb-Xc-k3D" firstAttribute="top" secondItem="WMN-w4-YAh" secondAttribute="bottom" constant="27.5" id="tmT-9t-dXz"/>
+                <constraint firstItem="Imn-qV-JQ3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vcT-6b-tpX"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ja8-qK-Msk"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="redIndicator" width="162" height="15"/>
+        <image name="背景2.png" width="342" height="598"/>
+    </resources>
+</document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSBlindPhoneVC">
+            <connections>
+                <outlet property="confirmCodeTextField" destination="1D7-lH-7HR" id="45P-kC-2lG"/>
+                <outlet property="phoneTextFiled" destination="88R-mQ-7IV" id="Ar4-TA-RLC"/>
+                <outlet property="requestCodeBtn" destination="K51-oW-XOV" id="pho-8D-bez"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入手机号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="88R-mQ-7IV">
+                    <rect key="frame" x="0.0" y="85" width="320" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1D7-lH-7HR">
+                    <rect key="frame" x="0.0" y="128" width="212" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="212" id="4QW-Zx-r3h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K51-oW-XOV" customClass="HSCountDownButton">
+                    <rect key="frame" x="213" y="128" width="107" height="29"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="获取验证码">
+                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="requestCode:" destination="-1" eventType="touchUpInside" id="yvf-No-HuH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="1D7-lH-7HR" firstAttribute="leading" secondItem="88R-mQ-7IV" secondAttribute="leading" id="7YI-QV-tg1"/>
+                <constraint firstItem="K51-oW-XOV" firstAttribute="top" secondItem="88R-mQ-7IV" secondAttribute="bottom" constant="13" id="RiD-zi-INg"/>
+                <constraint firstItem="K51-oW-XOV" firstAttribute="baseline" secondItem="1D7-lH-7HR" secondAttribute="baseline" id="aVT-Kc-8zJ"/>
+                <constraint firstItem="K51-oW-XOV" firstAttribute="trailing" secondItem="88R-mQ-7IV" secondAttribute="trailing" id="b4n-CL-z3m"/>
+                <constraint firstItem="K51-oW-XOV" firstAttribute="leading" secondItem="1D7-lH-7HR" secondAttribute="trailing" constant="1" id="cke-mA-eSh"/>
+                <constraint firstItem="88R-mQ-7IV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jXJ-WI-zaD"/>
+                <constraint firstItem="88R-mQ-7IV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="pRW-ee-XHT"/>
+                <constraint firstAttribute="trailing" secondItem="88R-mQ-7IV" secondAttribute="trailing" id="uQT-mb-ina"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

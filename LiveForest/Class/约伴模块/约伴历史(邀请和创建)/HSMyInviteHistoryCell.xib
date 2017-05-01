@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HSMyInviteHistoryCell" rowHeight="86" id="KGk-i7-Jjw" customClass="HSMyInviteHistoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="评论头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yk1-VR-qTB">
+                        <rect key="frame" x="8" y="8" width="56" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="C3n-K3-uQT"/>
+                            <constraint firstAttribute="width" constant="56" id="yo0-dc-pcZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gary Jones 邀请你参加 篮球" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMQ-85-hkt">
+                        <rect key="frame" x="72" y="8" width="240" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在邀请" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PB-dn-tDb">
+                        <rect key="frame" x="260" y="66" width="52" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjt-3n-imi">
+                        <rect key="frame" x="72" y="32" width="240" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2015.8.13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-YO-m99">
+                        <rect key="frame" x="72" y="66" width="58" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wMQ-85-hkt" secondAttribute="trailing" constant="8" id="5eH-XO-gFn"/>
+                    <constraint firstItem="wMQ-85-hkt" firstAttribute="leading" secondItem="Yk1-VR-qTB" secondAttribute="trailing" constant="8" id="7TN-bK-nbe"/>
+                    <constraint firstItem="SyG-YO-m99" firstAttribute="leading" secondItem="wMQ-85-hkt" secondAttribute="leading" id="DI2-Fd-DOz"/>
+                    <constraint firstAttribute="bottom" secondItem="SyG-YO-m99" secondAttribute="bottom" constant="3.5" id="JHX-6a-LSh"/>
+                    <constraint firstItem="SyG-YO-m99" firstAttribute="top" secondItem="gjt-3n-imi" secondAttribute="bottom" constant="13.5" id="P2b-Hw-5Gp"/>
+                    <constraint firstAttribute="bottom" secondItem="2PB-dn-tDb" secondAttribute="bottom" constant="3.5" id="T9W-hL-spD"/>
+                    <constraint firstItem="Yk1-VR-qTB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wa7-UD-FkQ"/>
+                    <constraint firstItem="gjt-3n-imi" firstAttribute="leading" secondItem="wMQ-85-hkt" secondAttribute="leading" id="Xod-Ep-l4v"/>
+                    <constraint firstItem="Yk1-VR-qTB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="a0e-90-gSq"/>
+                    <constraint firstItem="gjt-3n-imi" firstAttribute="top" secondItem="wMQ-85-hkt" secondAttribute="bottom" constant="4.5" id="bpn-U6-6fk"/>
+                    <constraint firstAttribute="trailing" secondItem="2PB-dn-tDb" secondAttribute="trailing" constant="8" id="cnp-zW-Px1"/>
+                    <constraint firstItem="wMQ-85-hkt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ez3-sO-eAf"/>
+                    <constraint firstAttribute="trailing" secondItem="gjt-3n-imi" secondAttribute="trailing" constant="8" id="gCz-fJ-aPl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avartaImage" destination="Yk1-VR-qTB" id="N6S-E7-MS8"/>
+                <outlet property="descriptionLabel" destination="gjt-3n-imi" id="6LW-vF-ehp"/>
+                <outlet property="inviteState" destination="2PB-dn-tDb" id="6po-67-WD9"/>
+                <outlet property="timeLabel" destination="SyG-YO-m99" id="mba-R7-KQs"/>
+                <outlet property="titleLabel" destination="wMQ-85-hkt" id="pWr-E3-Ai7"/>
+            </connections>
+            <point key="canvasLocation" x="224" y="166"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="评论头像.png" width="191" height="191"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

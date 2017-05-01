@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HSActivityLargeCardCell" rowHeight="332" id="kWl-8q-KvO" customClass="HSActivityLargeCardCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kWl-8q-KvO" id="8h7-UH-1PA">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="331.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="USA-G0-YnZ">
+                        <rect key="frame" x="8" y="8.5" width="304" height="315.5"/>
+                        <animations/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_2251.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yuW-qZ-ybE">
+                        <rect key="frame" x="10" y="8" width="300" height="191"/>
+                        <animations/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="评论头像2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qEw-C3-Fka">
+                        <rect key="frame" x="21" y="208" width="38" height="38"/>
+                        <animations/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="附近的凯撒交罚款了酒店开房附近的凯撒交罚款了酒店开房附近的凯撒交罚款了酒店开房附近的凯撒交罚款了酒店开房" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCT-KR-CN2">
+                        <rect key="frame" x="22" y="254" width="277" height="40"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.098039215690000001" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl3-QB-XQe">
+                        <rect key="frame" x="285" y="302" width="22" height="16"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" red="0.3411764706" green="0.3294117647" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jaspr Wang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ4-JU-sBf">
+                        <rect key="frame" x="63" y="208" width="235" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.3411764706" green="0.3294117647" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teS-f9-wnt">
+                        <rect key="frame" x="64" y="229" width="123" height="12"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.3411764706" green="0.3294117647" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vw-OJ-pUB">
+                        <rect key="frame" x="267" y="303" width="14" height="14"/>
+                        <animations/>
+                        <state key="normal" image="ic_chat_black_48dp.png"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-Uc-WhL">
+                        <rect key="frame" x="221" y="303" width="14" height="14"/>
+                        <animations/>
+                        <state key="normal" title="Button" image="ic_thumb_up_blue_48dp.png"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERU-NA-hAC">
+                        <rect key="frame" x="239" y="302" width="22" height="16"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" red="0.086274509799999996" green="0.59607843140000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="avatarImageView" destination="qEw-C3-Fka" id="90d-uu-DMw"/>
+                <outlet property="backgroundImageView" destination="yuW-qZ-ybE" id="RMB-0H-bm3"/>
+                <outlet property="commentBtn" destination="6vw-OJ-pUB" id="1hK-We-EDZ"/>
+                <outlet property="commentCountLabel" destination="hl3-QB-XQe" id="7J8-T2-W7u"/>
+                <outlet property="descriptionLabel" destination="xCT-KR-CN2" id="S1T-G2-UW9"/>
+                <outlet property="loveBtn" destination="b3Y-Uc-WhL" id="sQ1-4D-bfF"/>
+                <outlet property="loveCountLabel" destination="ERU-NA-hAC" id="GTW-nm-BsN"/>
+                <outlet property="nameLabel" destination="rQ4-JU-sBf" id="7Bs-0K-fNw"/>
+                <outlet property="timeLabel" destination="teS-f9-wnt" id="e29-bF-gsi"/>
+            </connections>
+            <point key="canvasLocation" x="593" y="496"/>
+        </tableViewCell>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+    <resources>
+        <image name="IMG_2251.jpg" width="960" height="720"/>
+        <image name="card bg.png" width="702" height="618"/>
+        <image name="ic_chat_black_48dp.png" width="96" height="96"/>
+        <image name="ic_thumb_up_blue_48dp.png" width="96" height="96"/>
+        <image name="评论头像2.jpg" width="225" height="225"/>
+    </resources>
+</document>

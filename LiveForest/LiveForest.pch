@@ -1,0 +1,23 @@
+//
+//  LiveForest.pch
+//  LiveForest
+//
+//  Created by 余超 on 15/11/4.
+//  Copyright © 2015年 HOTeam. All rights reserved.
+//
+
+#ifndef LiveForest_pch
+#define LiveForest_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#ifdef DEBUG // 处于开发阶段
+#define HSLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define HSLog(...)
+#endif
+
+
+#endif /* LiveForest_pch */

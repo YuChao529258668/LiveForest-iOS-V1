@@ -1,0 +1,126 @@
+PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - Baidu-Maps-iOS-SDK (2.6.0)
+  - Cordova (3.8.0)
+  - CRPixellatedView (1.0.1)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - GPUImage (0.1.7)
+  - JSONKit-NoWarning (1.2)
+  - libqrencode (3.4.2)
+  - MBProgressHUD (0.9.1)
+  - OMGHTTPURLRQ (2.1.3):
+    - OMGHTTPURLRQ/RQ (= 2.1.3)
+  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
+  - OMGHTTPURLRQ/RQ (2.1.3):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (2.1.3)
+  - PromiseKit (1.6.0):
+    - PromiseKit/CALayer (= 1.6.0)
+    - PromiseKit/NSNotificationCenter (= 1.6.0)
+    - PromiseKit/NSURLConnection (= 1.6.0)
+    - PromiseKit/Pause (= 1.6.0)
+    - PromiseKit/UIActionSheet (= 1.6.0)
+    - PromiseKit/UIAlertView (= 1.6.0)
+    - PromiseKit/UIView (= 1.6.0)
+    - PromiseKit/UIViewController (= 1.6.0)
+    - PromiseKit/Until (= 1.6.0)
+    - PromiseKit/When (= 1.6.0)
+  - PromiseKit/CALayer (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/NSNotificationCenter (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/NSURLConnection (1.6.0):
+    - OMGHTTPURLRQ (~> 2.1)
+    - PromiseKit/Promise
+  - PromiseKit/Pause (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/Promise (1.6.0)
+  - PromiseKit/UIActionSheet (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/UIAlertView (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/UIView (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/UIViewController (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/Until (1.6.0):
+    - PromiseKit/Promise
+    - PromiseKit/When
+  - PromiseKit/When (1.6.0):
+    - PromiseKit/Promise
+  - Qiniu (7.0.11.1):
+    - AFNetworking (~> 2.0)
+  - RadioButton (1.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - Shimmer (1.0.2)
+  - TuSDK (1.8.8):
+    - GPUImage (~> 0.1.6)
+  - YLMoment (0.2.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.5.0)
+  - Aspects
+  - Baidu-Maps-iOS-SDK (~> 2.6.0)
+  - Cordova (~> 3.8.0)
+  - CRPixellatedView
+  - FMDB (~> 2.5)
+  - JSONKit-NoWarning (~> 1.1)
+  - libqrencode (~> 3.4.2)
+  - MBProgressHUD (~> 0.9.1)
+  - PromiseKit (~> 1.0)
+  - Qiniu (~> 7.0)
+  - RadioButton
+  - SDWebImage (~> 3.7)
+  - Shimmer (~> 1.0.2)
+  - TuSDK (~> 1.8.8)
+  - YLMoment (~> 0.2.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Baidu-Maps-iOS-SDK: 260447c2270b44470d7c0d49a7f1a154b4703973
+  Cordova: 41554048698d50e70387ca2ab5bbdd1286fd0e39
+  CRPixellatedView: 68ea040b914f879423941905aa3cca03feac4864
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
+  libqrencode: 43dc34b89af83ea4b07c409cd8e09c87aa3a1c9f
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
+  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
+  Qiniu: 080a6728b969f6b0e77c9de574ede37e78b0912b
+  RadioButton: 7ef053baf6ff0e7f9e777016c28e9ba4e330edba
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  TuSDK: a9ee3d4ce1d4b24384e36a32317dad923c86df4e
+  YLMoment: af44d9d402790049e5490fa6eae9585b89b4090b
+
+COCOAPODS: 0.39.0

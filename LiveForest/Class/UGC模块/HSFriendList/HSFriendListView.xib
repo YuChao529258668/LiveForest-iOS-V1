@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HSFriendListView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back.png" translatesAutoresizingMaskIntoConstraints="NO" id="GRk-RB-1QU" customClass="HSFri">
+                    <rect key="frame" x="0.0" y="11" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="4ug-5u-N4i"/>
+                        <constraint firstAttribute="height" constant="32" id="U3Q-0v-YeX"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="17O-vi-vlS">
+                    <rect key="frame" x="0.0" y="41" width="600" height="551"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="xRK-hn-r5k"/>
+                    </constraints>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注列表" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-iX-OFZ">
+                    <rect key="frame" x="126" y="16" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GRk-RB-1QU" firstAttribute="centerY" secondItem="Fhg-iX-OFZ" secondAttribute="centerY" id="0GC-3h-2vd"/>
+                <constraint firstItem="17O-vi-vlS" firstAttribute="top" secondItem="Fhg-iX-OFZ" secondAttribute="bottom" constant="4" id="1zA-C2-cis"/>
+                <constraint firstItem="GRk-RB-1QU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3Rz-Ih-aKH"/>
+                <constraint firstItem="GRk-RB-1QU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="58L-cO-eA7"/>
+                <constraint firstItem="17O-vi-vlS" firstAttribute="leading" secondItem="GRk-RB-1QU" secondAttribute="leading" id="OBl-ac-Lcx"/>
+                <constraint firstItem="Fhg-iX-OFZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="S4b-7f-VUe"/>
+                <constraint firstItem="Fhg-iX-OFZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Yxa-S2-vAv"/>
+                <constraint firstAttribute="bottom" secondItem="17O-vi-vlS" secondAttribute="bottom" constant="-24" id="fjw-6A-fKd"/>
+            </constraints>
+            <connections>
+                <outlet property="imageBack" destination="GRk-RB-1QU" id="apd-IZ-bY9"/>
+                <outlet property="label_ListName" destination="Fhg-iX-OFZ" id="Bsd-FR-tg2"/>
+                <outlet property="tableView" destination="17O-vi-vlS" id="WEc-LM-wMv"/>
+            </connections>
+            <point key="canvasLocation" x="323" y="358"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back.png" width="48" height="48"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

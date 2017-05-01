@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSGameProcessViewController">
+            <connections>
+                <outlet property="activityLabel" destination="ioY-6E-4YU" id="tuD-u8-Yzj"/>
+                <outlet property="energyLabel" destination="Dy5-ke-eFm" id="nvS-rP-G5b"/>
+                <outlet property="lookDetailBtn" destination="l8i-Sx-KDv" id="Tmd-6J-3OO"/>
+                <outlet property="planetImageView" destination="Iph-s8-QAP" id="g3n-v6-tqI"/>
+                <outlet property="planetLabel" destination="ZW5-ZF-ePl" id="9hW-Qj-Su7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景3.png" translatesAutoresizingMaskIntoConstraints="NO" id="4RI-e8-JYM">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏进度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TQ-6p-P5V">
+                    <rect key="frame" x="220" y="46" width="160" height="48"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星球 1" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-s8-QAP">
+                    <rect key="frame" x="195" y="204" width="210" height="210"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Iph-s8-QAP" secondAttribute="height" multiplier="1:1" id="86d-Ix-qLa"/>
+                        <constraint firstAttribute="width" constant="270" id="NTD-cQ-Ahh"/>
+                        <constraint firstAttribute="width" secondItem="Iph-s8-QAP" secondAttribute="height" multiplier="1:1" id="Vev-Lv-oDp"/>
+                        <constraint firstAttribute="width" secondItem="Iph-s8-QAP" secondAttribute="height" multiplier="4:3" constant="-35.333333333333314" id="X2l-dP-JfM"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="270" id="fwh-Sv-IlA"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="270" id="g3K-KW-yDa"/>
+                        <constraint firstAttribute="height" constant="270" id="xQX-Yz-O1F"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="86d-Ix-qLa"/>
+                            <exclude reference="NTD-cQ-Ahh"/>
+                            <exclude reference="X2l-dP-JfM"/>
+                            <exclude reference="fwh-Sv-IlA"/>
+                            <exclude reference="g3K-KW-yDa"/>
+                            <exclude reference="xQX-Yz-O1F"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="-5" y="204" width="410" height="410"/>
+                    </variation>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="TwW-CC-JhL">
+                    <rect key="frame" x="180" y="109" width="240" height="18"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="O92-Xk-BPT"/>
+                        <constraint firstAttribute="width" constant="240" id="f8F-Hj-kQl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="互动值:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufG-rF-o5h">
+                    <rect key="frame" x="228" y="164" width="74" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="N8M-Ac-55n"/>
+                        <constraint firstAttribute="width" constant="74" id="ZyT-x3-efB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="能量值:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTU-TW-S9I">
+                    <rect key="frame" x="228" y="135" width="74" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="R5C-Ou-dUn"/>
+                        <constraint firstAttribute="width" constant="74" id="ccl-R2-pEs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy5-ke-eFm">
+                    <rect key="frame" x="310" y="135" width="229" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="229" id="CVH-SM-KdL"/>
+                        <constraint firstAttribute="height" constant="21" id="HVW-aM-mzo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="1" green="0.2484984355" blue="0.35752490749999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioY-6E-4YU">
+                    <rect key="frame" x="310" y="164" width="229" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="6Id-kI-gzT"/>
+                        <constraint firstAttribute="width" constant="229" id="baV-rR-3Wp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="1" green="0.2484984355" blue="0.35752490749999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cassiopeia星球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-ZF-ePl">
+                    <rect key="frame" x="229" y="437" width="142" height="25.5"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25.5" id="ila-RB-nFn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8i-Sx-KDv">
+                    <rect key="frame" x="236.5" y="487" width="124" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.99210556855317877" green="0.60627119546715114" blue="0.59707231262832927" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="RTO-FC-UGr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="  查看详情 &gt;  ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="lookDetailBtnClick:" destination="-1" eventType="touchUpInside" id="3ik-tD-8ny"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ufG-rF-o5h" firstAttribute="top" secondItem="CTU-TW-S9I" secondAttribute="bottom" constant="8" id="1lb-da-DpZ"/>
+                <constraint firstItem="l8i-Sx-KDv" firstAttribute="top" secondItem="ZW5-ZF-ePl" secondAttribute="bottom" constant="25" id="24p-0Q-Bqt"/>
+                <constraint firstItem="ioY-6E-4YU" firstAttribute="leading" secondItem="ufG-rF-o5h" secondAttribute="trailing" constant="3" id="2RV-oA-I6s"/>
+                <constraint firstItem="ufG-rF-o5h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-35" id="3gN-ei-gam"/>
+                <constraint firstItem="Dy5-ke-eFm" firstAttribute="leading" secondItem="CTU-TW-S9I" secondAttribute="trailing" constant="8" id="5DN-Jz-dGz"/>
+                <constraint firstAttribute="trailing" secondItem="4RI-e8-JYM" secondAttribute="trailing" id="5Jp-bU-2Hi"/>
+                <constraint firstItem="ZW5-ZF-ePl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Iph-s8-QAP" secondAttribute="bottom" constant="23" id="7gd-DQ-1Bf"/>
+                <constraint firstItem="Dy5-ke-eFm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="124" id="8i9-YJ-CuU"/>
+                <constraint firstItem="CTU-TW-S9I" firstAttribute="top" secondItem="TwW-CC-JhL" secondAttribute="bottom" constant="8" id="BAU-Rw-4me"/>
+                <constraint firstItem="TwW-CC-JhL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GBH-Ya-mCQ"/>
+                <constraint firstAttribute="centerX" secondItem="l8i-Sx-KDv" secondAttribute="centerX" constant="1.5" id="Iei-oU-8Yg"/>
+                <constraint firstItem="ufG-rF-o5h" firstAttribute="top" secondItem="CTU-TW-S9I" secondAttribute="bottom" constant="8" id="JYJ-0U-9mR"/>
+                <constraint firstAttribute="bottom" secondItem="l8i-Sx-KDv" secondAttribute="bottom" constant="25" id="N9C-9V-2Uf"/>
+                <constraint firstItem="Iph-s8-QAP" firstAttribute="top" secondItem="ufG-rF-o5h" secondAttribute="bottom" constant="20" id="ODe-N4-d6n"/>
+                <constraint firstItem="ioY-6E-4YU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="124" id="Rde-Ed-DQg"/>
+                <constraint firstItem="Iph-s8-QAP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="204" id="RqA-Gw-DAi"/>
+                <constraint firstItem="CTU-TW-S9I" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-35" id="VgN-iq-T0R"/>
+                <constraint firstAttribute="bottom" secondItem="4RI-e8-JYM" secondAttribute="bottom" id="XMZ-ux-UfY"/>
+                <constraint firstItem="Dy5-ke-eFm" firstAttribute="top" secondItem="TwW-CC-JhL" secondAttribute="bottom" constant="8" id="aNh-9G-rr7"/>
+                <constraint firstItem="ioY-6E-4YU" firstAttribute="top" secondItem="Dy5-ke-eFm" secondAttribute="bottom" constant="8" id="bgy-Ul-5V2"/>
+                <constraint firstAttribute="centerX" secondItem="ZW5-ZF-ePl" secondAttribute="centerX" id="cS6-aZ-XOp"/>
+                <constraint firstAttribute="bottom" secondItem="l8i-Sx-KDv" secondAttribute="bottom" constant="82.5" id="dEs-Qc-SCY"/>
+                <constraint firstItem="ZW5-ZF-ePl" firstAttribute="top" secondItem="Iph-s8-QAP" secondAttribute="bottom" constant="23" id="gL2-6u-gC7"/>
+                <constraint firstAttribute="centerX" secondItem="9TQ-6p-P5V" secondAttribute="centerX" id="hU9-aI-IU5"/>
+                <constraint firstItem="Iph-s8-QAP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ufG-rF-o5h" secondAttribute="bottom" constant="19" id="lHS-lr-2kx"/>
+                <constraint firstItem="4RI-e8-JYM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="miT-Mb-Gg9"/>
+                <constraint firstItem="Iph-s8-QAP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="9" id="moY-YU-ppq"/>
+                <constraint firstItem="TwW-CC-JhL" firstAttribute="top" secondItem="9TQ-6p-P5V" secondAttribute="bottom" constant="15" id="ssj-t1-HVY"/>
+                <constraint firstItem="Iph-s8-QAP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uGy-Cg-n5d"/>
+                <constraint firstAttribute="bottom" secondItem="l8i-Sx-KDv" secondAttribute="bottom" constant="25" id="vg4-Er-7Lm"/>
+                <constraint firstAttribute="bottom" secondItem="Iph-s8-QAP" secondAttribute="bottom" constant="186" id="w2J-Cd-HGP"/>
+                <constraint firstItem="4RI-e8-JYM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wxH-jY-vov"/>
+                <constraint firstItem="9TQ-6p-P5V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="z7k-wi-scR"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="JYJ-0U-9mR"/>
+                    <exclude reference="ODe-N4-d6n"/>
+                    <exclude reference="lHS-lr-2kx"/>
+                    <exclude reference="5DN-Jz-dGz"/>
+                    <exclude reference="2RV-oA-I6s"/>
+                    <exclude reference="7gd-DQ-1Bf"/>
+                    <exclude reference="gL2-6u-gC7"/>
+                    <exclude reference="N9C-9V-2Uf"/>
+                    <exclude reference="vg4-Er-7Lm"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="redIndicator" width="162" height="15"/>
+        <image name="星球 1" width="234" height="197"/>
+        <image name="背景3.png" width="342" height="598"/>
+    </resources>
+</document>

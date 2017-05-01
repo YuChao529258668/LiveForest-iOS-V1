@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C2055" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="adress" selectionStyle="default" indentationWidth="10" reuseIdentifier="addressCell" id="T3e-GW-aEh" customClass="HSAddressCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T3e-GW-aEh" id="SDW-lS-uMH">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-GE-Vaa" userLabel="line">
+                        <rect key="frame" x="0.0" y="80" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="UTM-qz-Kjx"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdy-sR-ffg">
+                        <rect key="frame" x="0.0" y="108" width="320" height="11"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="9gU-BH-eQX" userLabel="Height - (11) - View"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFL-HL-vW7">
+                        <rect key="frame" x="240" y="87" width="60" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="ihg-Gv-wqg"/>
+                            <constraint firstAttribute="height" constant="20" id="vQa-D3-3s2"/>
+                        </constraints>
+                        <state key="normal" title="删除">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteAddress:" destination="T3e-GW-aEh" eventType="touchUpInside" id="VgG-LB-o92"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YA-Ng-Kln">
+                        <rect key="frame" x="20" y="87" width="61" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="6XY-DV-CGM"/>
+                            <constraint firstAttribute="height" constant="20" id="czf-lu-v56"/>
+                        </constraints>
+                        <state key="normal" title="编辑">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="editAddress:" destination="T3e-GW-aEh" eventType="touchUpInside" id="h3b-mA-6mb"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wangfei  159963100000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOl-ny-MWJ">
+                        <rect key="frame" x="10" y="10" width="300" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="江苏省南京市鼓楼区新模范马路66号南京邮电大学6666号huhuhuhuuhhuhuuhhuhuu" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U15-OU-1bG">
+                        <rect key="frame" x="10" y="38" width="300" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="ktz-MQ-Zoa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Fmc-GE-Vaa" secondAttribute="trailing" id="6Fd-8a-8AL"/>
+                    <constraint firstItem="U15-OU-1bG" firstAttribute="top" secondItem="sOl-ny-MWJ" secondAttribute="bottom" constant="8" id="6d4-XK-sm9"/>
+                    <constraint firstItem="3YA-Ng-Kln" firstAttribute="leading" secondItem="SDW-lS-uMH" secondAttribute="leading" constant="20" id="7jd-xj-Osn"/>
+                    <constraint firstAttribute="trailing" secondItem="tdy-sR-ffg" secondAttribute="trailing" id="9lf-aw-MYr"/>
+                    <constraint firstItem="tdy-sR-ffg" firstAttribute="leading" secondItem="SDW-lS-uMH" secondAttribute="leading" id="Blx-RX-22g"/>
+                    <constraint firstAttribute="trailing" secondItem="U15-OU-1bG" secondAttribute="trailing" constant="10" id="G7c-vY-W7e"/>
+                    <constraint firstItem="Fmc-GE-Vaa" firstAttribute="leading" secondItem="SDW-lS-uMH" secondAttribute="leading" id="IKE-WD-AYG"/>
+                    <constraint firstAttribute="bottom" secondItem="tdy-sR-ffg" secondAttribute="bottom" id="KBn-tu-grR"/>
+                    <constraint firstAttribute="trailing" secondItem="sOl-ny-MWJ" secondAttribute="trailing" constant="10" id="QaK-Tb-BoF"/>
+                    <constraint firstItem="3YA-Ng-Kln" firstAttribute="top" secondItem="Fmc-GE-Vaa" secondAttribute="bottom" constant="6" id="adD-Bx-FHo"/>
+                    <constraint firstItem="sOl-ny-MWJ" firstAttribute="top" secondItem="SDW-lS-uMH" secondAttribute="top" constant="10" id="cyH-MG-5is"/>
+                    <constraint firstAttribute="trailing" secondItem="xFL-HL-vW7" secondAttribute="trailing" constant="20" id="eif-xu-7sm"/>
+                    <constraint firstItem="xFL-HL-vW7" firstAttribute="top" secondItem="Fmc-GE-Vaa" secondAttribute="bottom" constant="6" id="fMd-6T-ueK"/>
+                    <constraint firstItem="sOl-ny-MWJ" firstAttribute="leading" secondItem="SDW-lS-uMH" secondAttribute="leading" constant="10" id="oJT-CP-1O2"/>
+                    <constraint firstAttribute="trailing" secondItem="tdy-sR-ffg" secondAttribute="trailing" id="ozr-XE-lax"/>
+                    <constraint firstItem="Fmc-GE-Vaa" firstAttribute="top" secondItem="U15-OU-1bG" secondAttribute="bottom" constant="2" id="t0i-U2-82X"/>
+                    <constraint firstItem="U15-OU-1bG" firstAttribute="leading" secondItem="SDW-lS-uMH" secondAttribute="leading" constant="10" id="vPD-HZ-an5"/>
+                    <constraint firstItem="tdy-sR-ffg" firstAttribute="leading" secondItem="SDW-lS-uMH" secondAttribute="leading" id="x7j-rv-I3a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="U15-OU-1bG" id="Q6t-H1-HTV"/>
+                <outlet property="deleteButton" destination="xFL-HL-vW7" id="OXE-Q6-bnR"/>
+                <outlet property="editButton" destination="3YA-Ng-Kln" id="hlI-Lv-yoO"/>
+                <outlet property="namePhoneLabel" destination="sOl-ny-MWJ" id="N7t-iS-w6M"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

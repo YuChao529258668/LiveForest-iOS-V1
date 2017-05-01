@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SER-Zz-uw4" customClass="HSMineViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="活动详情113.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FBu-Wt-cRo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <animations/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOd-8B-vWi">
+                        <rect key="frame" x="16" y="163" width="288" height="354"/>
+                        <animations/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jaspr Wang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWS-2M-tl7">
+                        <rect key="frame" x="16" y="28" width="288" height="35"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvl-Xs-LXx">
+                        <rect key="frame" x="16" y="66" width="288" height="25"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="健身开始，上午游泳下午健身房。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFh-mr-uYF">
+                        <rect key="frame" x="16" y="91" width="288" height="57"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWQ-d0-Mmx">
+                        <rect key="frame" x="16" y="53" width="288" height="23"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jaspr Wang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfU-7u-d7h">
+                        <rect key="frame" x="16" y="20" width="288" height="33"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="健身开始，上午游泳下午健身房。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDm-kq-vjf">
+                        <rect key="frame" x="17" y="91" width="288" height="55.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACC-aa-kfq">
+                        <rect key="frame" x="16" y="152" width="288" height="285"/>
+                        <animations/>
+                    </imageView>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryR-Mf-Saf">
+                        <rect key="frame" x="0.0" y="527" width="320" height="2"/>
+                        <animations/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnL-XS-WQ0">
+                        <rect key="frame" x="219" y="540" width="27" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="18" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I76-ae-fZ7">
+                        <rect key="frame" x="258" y="538" width="18" height="22"/>
+                        <animations/>
+                        <state key="normal" image="ic_chat_black_48dp.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N23-rg-6I7">
+                        <rect key="frame" x="19" y="537" width="22" height="22"/>
+                        <animations/>
+                        <state key="normal" title="Button" image="ic_share.png">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xB-go-dnR">
+                        <rect key="frame" x="283" y="22" width="22" height="22"/>
+                        <animations/>
+                        <state key="normal" title="Button" image="ic_close_black_48dp.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-4v-1pR">
+                        <rect key="frame" x="16" y="86" width="296" height="61.5"/>
+                        <animations/>
+                        <connections>
+                            <action selector="showDetailBtnClick:" destination="SER-Zz-uw4" eventType="touchUpInside" id="tKd-2C-pW1"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_location_create_activity.png" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-Lh-XK1">
+                        <rect key="frame" x="19" y="489" width="27" height="28"/>
+                        <animations/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="铁匠营" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4a-a3-GbT">
+                        <rect key="frame" x="49" y="491" width="260" height="23"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-um-bcs">
+                        <rect key="frame" x="280" y="540" width="27" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sh-sS-Ur8">
+                        <rect key="frame" x="198" y="537" width="18" height="22"/>
+                        <animations/>
+                        <state key="normal" image="ic_thumb_up_black_48dp.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="selected" image="ic_thumb_up_blue_48dp.png"/>
+                        <state key="highlighted" image="ic_thumb_up_blue_48dp.png"/>
+                    </button>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="commentBtnLarge" destination="I76-ae-fZ7" id="zcr-d5-0DX"/>
+                <outlet property="commentCount" destination="b1V-um-bcs" id="b4A-bM-Prp"/>
+                <outlet property="contentImgViewLarge" destination="ACC-aa-kfq" id="Dok-sW-LF1"/>
+                <outlet property="contentImgViewSmall" destination="jOd-8B-vWi" id="KKr-XA-iqb"/>
+                <outlet property="deleteShareBtn" destination="9xB-go-dnR" id="EAd-se-IYG"/>
+                <outlet property="mapLocationBtn" destination="Egc-Lh-XK1" id="Zzb-7R-gUY"/>
+                <outlet property="mapLocationLabel" destination="n4a-a3-GbT" id="f3F-Vf-t5G"/>
+                <outlet property="nameLabelLarge" destination="lfU-7u-d7h" id="86k-SR-lD8"/>
+                <outlet property="nameLabelSmall" destination="oWS-2M-tl7" id="QyM-nT-qOm"/>
+                <outlet property="praiseBtnLarge" destination="4Sh-sS-Ur8" id="Zbd-lg-HGq"/>
+                <outlet property="praiseLabelLarge" destination="BnL-XS-WQ0" id="tnO-TJ-aJV"/>
+                <outlet property="progressView" destination="ryR-Mf-Saf" id="Ub9-es-PXG"/>
+                <outlet property="shareThird" destination="N23-rg-6I7" id="jhc-BX-Aof"/>
+                <outlet property="textLabelLarge" destination="rDm-kq-vjf" id="yPW-UW-rWr"/>
+                <outlet property="textLabelSmall" destination="OFh-mr-uYF" id="9Ci-TW-x9q"/>
+                <outlet property="timeLabelLarge" destination="cWQ-d0-Mmx" id="TAO-cT-JAw"/>
+                <outlet property="timeLabelSmall" destination="Tvl-Xs-LXx" id="CXb-Nn-Lpb"/>
+            </connections>
+            <point key="canvasLocation" x="352" y="299"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_chat_black_48dp.png" width="96" height="96"/>
+        <image name="ic_close_black_48dp.png" width="96" height="96"/>
+        <image name="ic_location_create_activity.png" width="72" height="72"/>
+        <image name="ic_share.png" width="36" height="36"/>
+        <image name="ic_thumb_up_black_48dp.png" width="96" height="96"/>
+        <image name="ic_thumb_up_blue_48dp.png" width="96" height="96"/>
+        <image name="活动详情113.jpg" width="750" height="1334"/>
+    </resources>
+</document>

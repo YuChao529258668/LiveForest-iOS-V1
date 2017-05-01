@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSOnGoingGameViewController">
+            <connections>
+                <outlet property="continueGameBtn" destination="vUZ-HM-ivD" id="NRQ-Yh-hGu"/>
+                <outlet property="onGoingDetailLabel" destination="SJp-GI-urg" id="9vE-JH-h4y"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="正在进行.png" translatesAutoresizingMaskIntoConstraints="NO" id="Akh-hG-J9H">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在进行" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZm-qJ-sqL">
+                    <rect key="frame" x="200" y="46" width="200" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="OpR-Mf-89r"/>
+                        <constraint firstAttribute="height" constant="50" id="ZpX-EV-lVT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你还有一个单人模式任务没有完成，快回来带领小L和小F一起解放星球把！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJp-GI-urg">
+                    <rect key="frame" x="159" y="147" width="283" height="213"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="zHB-Im-Ox0">
+                    <rect key="frame" x="180" y="109" width="240" height="18"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="CH3-Cs-gT8"/>
+                        <constraint firstAttribute="width" constant="240" id="Doo-0t-TMu"/>
+                        <constraint firstAttribute="width" secondItem="zHB-Im-Ox0" secondAttribute="height" multiplier="40:3" id="i9L-q6-qwR"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="i9L-q6-qwR"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUZ-HM-ivD">
+                    <rect key="frame" x="211.5" y="368" width="177" height="50"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Oc3-Bo-6Z1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="  继续游戏 &gt;  ">
+                        <color key="titleColor" red="0.25098039215686274" green="0.27843137254901962" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="continueGameButtonClicked:" destination="-1" eventType="touchUpInside" id="MAR-vq-rzc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.13333333333333333" green="0.41960784313725491" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="jZm-qJ-sqL" secondAttribute="centerX" id="2Vq-6V-hCt"/>
+                <constraint firstAttribute="bottom" secondItem="Akh-hG-J9H" secondAttribute="bottom" id="6Z5-cz-PiF"/>
+                <constraint firstAttribute="bottom" secondItem="vUZ-HM-ivD" secondAttribute="bottom" constant="182" id="9GK-vT-fCa"/>
+                <constraint firstItem="Akh-hG-J9H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CjM-nu-SOu"/>
+                <constraint firstItem="vUZ-HM-ivD" firstAttribute="top" secondItem="SJp-GI-urg" secondAttribute="bottom" constant="8" id="LpX-fn-Ot0"/>
+                <constraint firstItem="Akh-hG-J9H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pop-9a-0ql"/>
+                <constraint firstItem="zHB-Im-Ox0" firstAttribute="top" secondItem="jZm-qJ-sqL" secondAttribute="bottom" constant="13" id="YKW-d7-aMi"/>
+                <constraint firstItem="SJp-GI-urg" firstAttribute="leading" secondItem="jZm-qJ-sqL" secondAttribute="leading" constant="-41" id="Zu1-zy-6DF"/>
+                <constraint firstItem="jZm-qJ-sqL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="epd-6N-VXo"/>
+                <constraint firstItem="SJp-GI-urg" firstAttribute="top" secondItem="zHB-Im-Ox0" secondAttribute="bottom" constant="20" id="jIn-5s-bem"/>
+                <constraint firstAttribute="trailing" secondItem="Akh-hG-J9H" secondAttribute="trailing" id="kRc-ND-avF"/>
+                <constraint firstItem="SJp-GI-urg" firstAttribute="top" secondItem="jZm-qJ-sqL" secondAttribute="bottom" constant="51" id="mcA-0W-bhe"/>
+                <constraint firstAttribute="centerX" secondItem="vUZ-HM-ivD" secondAttribute="centerX" id="pj4-Lx-sA1"/>
+                <constraint firstItem="zHB-Im-Ox0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vmL-Gz-TcQ"/>
+                <constraint firstAttribute="centerX" secondItem="SJp-GI-urg" secondAttribute="centerX" id="wsM-xE-gmN"/>
+                <constraint firstItem="SJp-GI-urg" firstAttribute="trailing" secondItem="jZm-qJ-sqL" secondAttribute="trailing" constant="42" id="xMF-Ti-kHU"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="jIn-5s-bem"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="whiteIndicator" width="195" height="15"/>
+        <image name="正在进行.png" width="168" height="295"/>
+    </resources>
+</document>
