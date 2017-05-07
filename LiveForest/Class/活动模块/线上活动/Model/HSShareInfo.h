@@ -49,4 +49,8 @@
 -(instancetype)initWithDic:(NSDictionary *)dict;
 +(instancetype)shareInfoWithDic:(NSDictionary *)dict;
 +(NSArray *)shareInfoArrayWithArray:(NSArray *)array;
+
+/// 用于演示
++ (NSMutableArray *)test;
+
 @end

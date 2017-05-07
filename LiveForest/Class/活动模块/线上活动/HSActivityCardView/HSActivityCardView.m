@@ -259,7 +259,8 @@ static NSString *reuseIdentifier = @"HSActivityLargeCardCell";
     officialViewController = [[HSOfficialViewController alloc]init];
     [officialViewController getShareInfoWithShareID:shareID];
     [officialViewController show];
-    
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:officialViewController animated:YES completion:nil]; // 会导致根控制器消失。。。
+
 //    static HSCommentViewController *commentViewController;
 //    commentViewController = [[HSCommentViewController alloc]init];
 //    HSOfficialView *officialView = (HSOfficialView *)officialViewController.view;

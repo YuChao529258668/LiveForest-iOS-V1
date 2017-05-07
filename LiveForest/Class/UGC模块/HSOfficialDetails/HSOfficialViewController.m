@@ -68,6 +68,32 @@
 #pragma mrak 获取dic用 shareid
 - (void)getShareInfoWithShareID:(NSString *)shareID{
     
+    // 用于演示
+    _offView.shareID = shareID;
+    NSDictionary *dic = @{
+                          @"share_description": @"分享描述分享描述分享描述分享描述分享描述分享描述分享描述",
+                          @"share_img_path": @[@"http://t1.niutuku.com/960/22/22-435778.jpg",
+                                               @"http://g.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=aef92f0b09f79052ef4a4f3a39c3fbfc/aa64034f78f0f736219e10190a55b319ebc41341.jpg",
+                                               @"http://pic.wenwen.soso.com/p/20091004/20091004223808-749075817.jpg",
+                                               @"http://dynamic-image.yesky.com/600x-/uploadImages/2012/229/62SW1O3LI8UQ.jpg",
+                                               @"http://e.hiphotos.baidu.com/zhidao/pic/item/342ac65c103853431f0bcc079313b07ecb8088d4.jpg",
+                                               @"http://s3.sinaimg.cn/orignal/4c42990eaf4e962a49782"],
+                          @"user_logo_img_path": @"http://p.store.itangyuan.com/p/chapter/attachment/etMsEgjseS/EgfwEgfSegAuEtjUE_EtETuh4bsOJgetjmilgNmii_EV87ocJn9L5Cb.jpg",
+                          @"share_like_num": @"4",
+                          @"share_location": @"广州",
+                          @"comment_count": @"0"
+                          };
+    _offView.timeLabelLarge.text = @"2017.1.1";
+    _dic = dic;
+    [self initView];
+
+    
+    return;
+    
+    
+    
+    
+    
     _offView.shareID = shareID;
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -349,6 +375,14 @@
 
 #pragma mark 点赞按钮
 - (void) praiseBtnLarge:(UIButton *)btn{
+    // 用于演示
+    [self praiseBtnClick:btn andNum:_offView.praiseLabelLarge.text];
+    return;
+    
+    
+    
+    
+    
     //获取用户token
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -459,12 +493,19 @@
 #pragma mark 点击头像
 - (void)avataImgPress:(UIButton *)btn{
     
+    // 用于演示
+    return;
+    
+    
+    
     _visitMineVC=[[HSVisitMineController alloc]init];
     [_visitMineVC requestPersonalInfoWithUserID:[_dic objectForKey:@"user_id"]];
     //        _visitMineVC.userId = userID;
     [self show:_visitMineVC.view];
 //    UIWindow *appWindow = [[UIApplication sharedApplication] keyWindow];
 //    [appWindow insertSubview:_visitMineVC.view aboveSubview:self.view];
+    
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:_visitMineVC animated:YES completion:nil];
 }
 
 #pragma mark 界面从下向上 弹出

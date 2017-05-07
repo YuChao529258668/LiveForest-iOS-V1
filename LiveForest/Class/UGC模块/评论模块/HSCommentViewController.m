@@ -478,9 +478,19 @@ static NSString *reuseIdentifier=@"CommentCell";
     //关闭键盘
     [self.commentView.commentTextView resignFirstResponder];
 }
+
+
 #pragma mark -获取评论
 -(void)getShareCommet
 {
+    
+    // 用于演示
+    self.commentArray = [HSCommentModel test];
+    [self.commentView.tableView reloadData];
+    return;
+    
+    
+    
     //获取用户token
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *user_token = [userDefaults objectForKey:@"user_token"];

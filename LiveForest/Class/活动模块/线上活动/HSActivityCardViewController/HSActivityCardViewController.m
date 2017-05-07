@@ -41,17 +41,6 @@ static NSString *reuseIdentifier = @"HSActivityLargeCardCell";
 }
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark <设置cardView的子视图透明度>
 -(void)setSubviewsAlphaWithFactor:(float) factor {
     cardView.smallCardView.alpha=2-factor;
@@ -108,5 +97,5 @@ static NSString *reuseIdentifier = @"HSActivityLargeCardCell";
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return NO;
 }
-//- (void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+
 @end

@@ -44,4 +44,7 @@
 -(instancetype)initWithDic:(NSDictionary *)dict;
 +(instancetype)picActivityInfoWithDic:(NSDictionary *)dict;
 
+/// 用于演示
++ (NSMutableArray *)test;
+
 @end

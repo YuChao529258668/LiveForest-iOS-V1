@@ -71,6 +71,8 @@ static float factor;
     [TuSDK checkManagerWithDelegate:self];
     
     self.requestDataCtrl = [[HSRequestDataController alloc] init];
+    
+    self.tableView.tableFooterView = [UIView new];
 
 }
 -(void)viewWillAppear:(BOOL)animated

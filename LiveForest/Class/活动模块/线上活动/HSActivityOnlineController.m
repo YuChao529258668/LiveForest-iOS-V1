@@ -30,6 +30,7 @@
 
 @end
 
+
 @implementation HSActivityOnlineController
 //@synthesize collectionView;
 //@synthesize scrollView;
@@ -328,7 +329,8 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.mapViewLarge.alpha = progress;
 }
 
-#pragma collectionView controller
+#pragma mark - UICollectionViewDataSource
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
     return self.picActivityArray.count;
@@ -644,6 +646,17 @@ static NSString * const reuseIdentifier = @"Cell";
  */
 - (void)getDisplayPicActivity
 {
+    // 用于演示
+    self.picActivityArray = [HSDisplayPicActivity test];
+    n = [self.picActivityArray count];
+    [self.scrollView reloadDataWithArrayCount:self.picActivityArray.count];
+    //加载详细信息
+    [self getDisplayPicActivityInfo];
+
+    return;
+    
+    
+    
     //获取用户token
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -654,29 +667,17 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:user_token,@"user_token",nil];
     NSDictionary *requestData = [[NSDictionary alloc] initWithObjectsAndKeys:[dic JSONString],@"requestData", nil];
+    
     [self.requestDataCtrl getDisplayPicActivityList:requestData andRequestCB:^(BOOL code, NSArray *responseObject, NSString * error) {
         if (code) {
             if (responseObject != nil) {
                 self.picActivityArray = [HSDisplayPicActivity displayPicActivityWithArray:responseObject];
                 n = [self.picActivityArray count];
-                
-//                //修改collectionView的大小
-//                CGRect frame = _collectView.frame;
-//                if (factor==factorMax) {
-//                    frame.size.width =kScreenWidth*[self.picActivityArray count];
-//                } else {
-//                    frame.size.width =kScreenWidth*[self.picActivityArray count]*0.45;
-//                }
-//                self.scrollView.contentSize = frame.size;
-//                _collectView.frame = frame;
-//                [self.collectionView reloadData];
-                
                 [self.scrollView reloadDataWithArrayCount:self.picActivityArray.count];
                 
                 
                 //加载详细信息
                 [self getDisplayPicActivityInfo];
-                
             }else{
                 NSLog(@"晒图官方数据为空");
             }
@@ -692,7 +693,8 @@ static NSString * const reuseIdentifier = @"Cell";
     //线上活动名称
     [cell.activityNameSmall setText:displayPicActivity.activity_name];
     
-    [cell.activityDescriptionSmall setText:displayPicActivity.activity_summary];
+    // 异常，暂时注释掉 'NSInternalInconsistencyException', reason: 'Only run on the main thread
+//    [cell.activityDescriptionSmall setText:displayPicActivity.activity_summary];
     
     NSString *activity_user_num = displayPicActivity.activity_user_num;
     NSString *activityJoinCount = [NSString stringWithFormat:@"已有 %@ 人参加",activity_user_num];
@@ -781,6 +783,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)initCardViewController {
     cardViewController=[[HSActivityCardViewController alloc]init];
 }
+
 - (void)initCardViewControllers {
     cardViewControllerArray = [[NSMutableArray alloc]init];
     for (int i=0; i<n; i++) {
@@ -795,9 +798,29 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     return cardViewController;
 }
+
 #pragma mark - 返回官方主题晒图活动详情
 - (void)getDisplayPicActivityInfo
 {
+    // 用于演示
+    self.picActivityInfoArray = [HSPicActivityInfo test];
+    for (HSDisplayPicActivity * picActivity in self.picActivityArray) {
+        int index = (int)[self.picActivityArray indexOfObject:picActivity];
+        if (cardViewArray.count > 0) {
+            HSActivityCardView *cardView = (HSActivityCardView *)cardViewArray[index > cardViewArray.count - 1?cardViewArray.count - 1:index ];
+            cardView.picActivityInfo = self.picActivityInfoArray[index];
+//            cardView.picActivityInfo = picActivityInfo;
+//                    cardView.shareInfoArray = [NSMutableArray arrayWithArray:picActivityInfo.shareList];
+            [cardView.tableView reloadData];
+        }
+
+    }
+    
+    return;
+    
+    
+    
+    
     NSString *user_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_token"];
     if (!user_token) {
         NSLog(@"%s,user_token为空",__func__);
@@ -808,6 +831,7 @@ static NSString * const reuseIdentifier = @"Cell";
             NSString *activityID = picActivity.activity_id;
             NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:user_token,@"user_token",activityID,@"activity_id", nil];
             NSDictionary *requestData = [[NSDictionary alloc]initWithObjectsAndKeys:[dict JSONString],@"requestData", nil];
+            
             [self.requestDataCtrl getDisplayPicActivityInfo:requestData andRequestCB:^(BOOL code, id responseObject, NSString *error) {
                 if (code) {
                     HSPicActivityInfo *picActivityInfo = [HSPicActivityInfo picActivityInfoWithDic:responseObject];

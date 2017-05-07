@@ -2294,10 +2294,10 @@
 		0D74802E1EB5EA290040C829 /* 线上活动 */ = {
 			isa = PBXGroup;
 			children = (
-				0D74802F1EB5EA290040C829 /* HSActivityCardView */,
-				0D7480451EB5EA290040C829 /* HSActivityCardViewController */,
 				0D7480481EB5EA290040C829 /* HSActivityOnlineController.h */,
 				0D7480491EB5EA290040C829 /* HSActivityOnlineController.m */,
+				0D74802F1EB5EA290040C829 /* HSActivityCardView */,
+				0D7480451EB5EA290040C829 /* HSActivityCardViewController */,
 				0D74804A1EB5EA290040C829 /* Model */,
 			);
 			path = "线上活动";

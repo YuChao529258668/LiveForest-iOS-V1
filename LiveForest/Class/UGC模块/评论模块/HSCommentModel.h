@@ -50,4 +50,8 @@
 +(instancetype)commentModelWithDic:(NSDictionary *)dict;
 /** 返回commentModel的可变数组*/
 +(NSMutableArray *)commentModelsWithArray:(NSArray *)array;
+
+/// 用于演示
++ (NSMutableArray *)test;
+
 @end
