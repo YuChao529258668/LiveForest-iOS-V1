@@ -1425,6 +1425,11 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     }];
 }
 
+///  让 HSSettingViewController 调用 performSelector 的时候调用
+- (void)removeCoverBtn {
+    [coverBtn removeFromSuperview];
+}
+
 #pragma mark 获取屏幕截图
 - (UIImage *)getScreenShoot {
     UIGraphicsBeginImageContext(self.view.frame.size);

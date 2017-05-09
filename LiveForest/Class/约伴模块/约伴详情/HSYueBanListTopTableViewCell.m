@@ -39,9 +39,9 @@ static int minToSec = 60.0;
 -(void)setYuebanDetail:(HSMyYueBanDetailList *)yuebanDetail{
     //约伴详情 赋值
     _yuebanDetail = yuebanDetail;    
-    NSLog(@"%@",yuebanDetail.yueban_sport_id);
-    NSLog(@"%@",yuebanDetail.user_nickname);
-    NSLog(@"%@",yuebanDetail.yueban_voice_second);
+//    NSLog(@"%@",yuebanDetail.yueban_sport_id);
+//    NSLog(@"%@",yuebanDetail.user_nickname);
+//    NSLog(@"%@",yuebanDetail.yueban_voice_second);
     //运动类型
     NSString *sport = [HSDataFormatHandle sportFormatHandleWithSportID:yuebanDetail.yueban_sport_id];
     NSString *sportId = [NSString stringWithFormat:@"%@",yuebanDetail.yueban_sport_id];
@@ -65,7 +65,7 @@ static int minToSec = 60.0;
     if (![yuebanDetail.yueban_voice_info isEqualToString:@""]) {
         self.inviteMessageLabel.hidden = YES;
         self.voiceInfoBtn.hidden = NO;
-        NSLog(@"%@",yuebanDetail.yueban_voice_second);
+//        NSLog(@"%@",yuebanDetail.yueban_voice_second);
         if (![yuebanDetail.yueban_voice_second isEqualToString:@"-10086"]) {
             [self.voiceInfoBtn setTitle:yuebanDetail.yueban_voice_second forState:UIControlStateNormal];
         }
@@ -92,7 +92,7 @@ static int minToSec = 60.0;
     NSDate *publishTimeDate = [NSDate dateWithTimeIntervalSince1970:([publishTimeStr integerValue]/1000)];
     NSComparisonResult compare = [date compare:givenTimeDate];
     if (compare  == NSOrderedSame ||compare == NSOrderedDescending) {
-        NSLog(@"yiyang de ");
+//        NSLog(@"yiyang de ");
         _sec=0;
         _min =0;
         _hour = 0;

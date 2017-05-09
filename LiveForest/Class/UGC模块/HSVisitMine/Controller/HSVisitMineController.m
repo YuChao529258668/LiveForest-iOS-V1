@@ -776,18 +776,8 @@ static NSString *cellIdentifier = @"CellForHSMineWithIdentifier";
     if(!_userId){
         return;
     }
-    //异步
-    //1.获得全局的并发队列
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-        //请求数据
-        NSLog(@"开始请求数据");
-        [self getFollowingInfo];
-        [self postRequestComplete];
-        
-    });
+    [self getFollowingInfo];
+    [self postRequestComplete];
 }
 #pragma 获取被关注人的个人详情
 -(void)getFollowingInfo{

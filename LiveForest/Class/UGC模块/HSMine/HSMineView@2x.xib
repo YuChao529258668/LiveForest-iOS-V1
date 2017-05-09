@@ -20,13 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile Others'.png" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-qU-8B8">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTr-va-EH0">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TTr-va-EH0">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="368"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="368" id="J5g-uZ-HTx"/>
+                        <constraint firstAttribute="width" constant="375" id="u8V-DV-UPB"/>
+                    </constraints>
                 </imageView>
                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-O4-mQf">
                     <rect key="frame" x="198" y="12" width="53" height="51"/>
@@ -44,9 +43,8 @@
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5L-Bj-pw6">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5L-Bj-pw6">
                     <rect key="frame" x="0.0" y="368" width="375" height="368"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="评论头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="05c-1q-9lJ">
                     <rect key="frame" x="21" y="93" width="150" height="150"/>
@@ -153,6 +151,14 @@
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="u5L-Bj-pw6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PvT-Gs-xiN"/>
+                <constraint firstItem="u5L-Bj-pw6" firstAttribute="width" secondItem="TTr-va-EH0" secondAttribute="width" id="SLB-g0-GgR"/>
+                <constraint firstItem="u5L-Bj-pw6" firstAttribute="top" secondItem="TTr-va-EH0" secondAttribute="bottom" id="dp5-Sp-tpj"/>
+                <constraint firstItem="TTr-va-EH0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oJ4-j8-bNR"/>
+                <constraint firstItem="u5L-Bj-pw6" firstAttribute="height" secondItem="TTr-va-EH0" secondAttribute="height" id="p0J-nT-hdA"/>
+                <constraint firstItem="TTr-va-EH0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tUB-aX-Jfj"/>
+            </constraints>
             <connections>
                 <outlet property="NotiBtn" destination="Qt1-Vd-ebf" id="5q2-wo-2fd"/>
                 <outlet property="attendLabel" destination="szx-Js-eXo" id="dnI-7v-RvD"/>
@@ -175,7 +181,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Profile Others'.png" width="750" height="1334"/>
         <image name="ic_hike.png" width="69" height="69"/>
         <image name="ic_notif.png" width="69" height="69"/>
         <image name="ic_quit.png" width="65" height="65"/>

@@ -173,18 +173,20 @@ static NSString * const reuseIdentifier = @"Cell";
         [self addTopBtnClickToScaleObserver];
         
         
-        //异步
-        //1.获得全局的并发队列
-        dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        //2.添加任务到队列中，就可以执行任务
-        //异步函数：具备开启新线程的能力
-        dispatch_async(queue, ^{
-            //请求数据
-            NSLog(@"开始请求数据");
-            //请求线上晒图活动
-            [self getDisplayPicActivity];
-            
-        });
+//        //异步
+//        //1.获得全局的并发队列
+//        dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//        //2.添加任务到队列中，就可以执行任务
+//        //异步函数：具备开启新线程的能力
+//        dispatch_async(queue, ^{
+//            //请求数据
+////            NSLog(@"开始请求数据");
+//            //请求线上晒图活动
+//            [self getDisplayPicActivity];
+//            
+//        });
+        [self getDisplayPicActivity];
+
         
     }
     return self;
@@ -859,17 +861,7 @@ static NSString * const reuseIdentifier = @"Cell";
  *  联网后从新加载数据
  */
 - (void)reloadData{
-    //异步
-    //1.获得全局的并发队列
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-        //请求数据
-        NSLog(@"开始请求数据");
-        
-        [self getDisplayPicActivity];
-    });
+    [self getDisplayPicActivity];
     
 }
 

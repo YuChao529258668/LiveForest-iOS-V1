@@ -96,23 +96,9 @@
 //    //编码图片路径
 //    NSURL * urlAvarl = [NSURL URLWithString:[zipAvatarlUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
-    //异步
-    //1.获得全局的并发队列
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-        
-//        [cell.imageview_avatar sd_setImageWithURL:urlAvarl
-//                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                                  if(!image){
-//                                      NSLog(@"请求头像失败");
-//                                  }
-//                              }];
-        
-        [HSDataFormatHandle getImageWithUri:avatarUrl isYaSuo:true imageTarget:cell.imageview_avatar defaultImage:[UIImage imageNamed:@"default"] andRequestCB:^(UIImage *image) {
-        }];
-    });
+    [HSDataFormatHandle getImageWithUri:avatarUrl isYaSuo:true imageTarget:cell.imageview_avatar defaultImage:[UIImage imageNamed:@"default"] andRequestCB:^(UIImage *image) {
+    }];
+
     
     cell.label_username.text = friendInfo.user_nickname;
     //设置当前用户的性别

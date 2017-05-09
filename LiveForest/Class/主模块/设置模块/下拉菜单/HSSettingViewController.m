@@ -164,8 +164,7 @@ int cellNumber=5;//定义行数
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         //判断是否已经有个人信息
-        if([userDefaults objectForKey:@"user_logo_img"] ){
-            
+        if([userDefaults objectForKey:@"user_logo_img"] ){            
             imageView.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_img"]];
         }
         else{
@@ -304,58 +303,11 @@ int cellNumber=5;//定义行数
         //扫描二维码
         _qrVC = [[QRViewController alloc]init];
         [self show:_qrVC.view];
-//        UIWindow *appWindow = [[[UIApplication sharedApplication] delegate] window];
-//        CGRect frame=self.view.frame;
-//        //上下平移
-//        frame.origin.y = 0;
-//        appWindow.rootViewController.view.frame = frame;
-
-//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:_qrVC];
-
-//        CGRect qrVCFrame=self.view.frame;
-//        qrVCFrame.origin.y = kScreenHeight;
-//        _qrVC.view.frame = qrVCFrame;
-//        [appWindow insertSubview:_qrVC.view aboveSubview:appWindow.rootViewController.view];
-//        
-//        [UIView animateWithDuration:0.3 animations:^{
-//            CGRect viewFram = self.view.frame;
-//            viewFram.origin.y = 0;
-//            _qrVC.view.frame = viewFram;
-//            
-//            appWindow.rootViewController.view.frame = viewFram;
-//
-//        } completion:^(BOOL finished) {
-//        }];
-
     }
     if(indexPath.row == 4){
         static HSQRDisplayVC *qr;
         qr = [[HSQRDisplayVC alloc] init];
         [self show:qr.view];
-//        UIWindow *appWindow = [[UIApplication sharedApplication] keyWindow];
-////        CGRect frame=self.view.frame;
-////        //上下平移
-////        frame.origin.y = 0;
-////        appWindow.rootViewController.view.frame = frame;
-//        //    [self.view removeFromSuperview];
-////        [appWindow.rootViewController presentViewController:qr animated:YES completion:nil];
-////        [appWindow insertSubview:qr.view aboveSubview:appWindow.rootViewController.view];
-//        
-//        CGRect qrVCFrame=self.view.frame;
-//        qrVCFrame.origin.y = kScreenHeight;
-//        qr.view.frame = qrVCFrame;
-//        [appWindow insertSubview:qr.view aboveSubview:appWindow.rootViewController.view];
-//        
-//        [UIView animateWithDuration:0.3 animations:^{
-//            CGRect viewFram = self.view.frame;
-//            viewFram.origin.y = 0;
-//            qr.view.frame = viewFram;
-//            
-//            appWindow.rootViewController.view.frame = viewFram;
-//            
-//        } completion:^(BOOL finished) {
-//        }];
-
     }
 }
 
@@ -388,7 +340,10 @@ int cellNumber=5;//定义行数
         frame.origin.y=0;
         view.frame=frame;
         appWindow.rootViewController.view.frame = frame;
+        
     }completion:^(BOOL finished) {
+        // 这里的 rootViewController 就是 HSViewController。让其移除上面的按钮(点击会让它的 y = 0)
+        [appWindow.rootViewController performSelector:@selector(removeCoverBtn) withObject:nil afterDelay:0];
     }];
 
 }

@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LiveForest/Class/&#x6d3b;&#x52a8;&#x6a21;&#x5757;/&#x7ebf;&#x4e0a;&#x6d3b;&#x52a8;/HSActivityOnlineController.m"
-            timestampString = "515857875.335557"
+            timestampString = "515996247.660189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "661"
-            endingLineNumber = "661"
+            startingLineNumber = "663"
+            endingLineNumber = "663"
             landmarkName = "-getDisplayPicActivity"
             landmarkType = "7">
          </BreakpointContent>
@@ -192,6 +192,22 @@
             startingLineNumber = "252"
             endingLineNumber = "252"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiveForest/Class/&#x4e3b;&#x6a21;&#x5757;/&#x6839;&#x63a7;&#x5236;&#x5668;/HSViewController.m"
+            timestampString = "515994600.127977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "813"
+            endingLineNumber = "813"
+            landmarkName = "-viewWillDisappear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

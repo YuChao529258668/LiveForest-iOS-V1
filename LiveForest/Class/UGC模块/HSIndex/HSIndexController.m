@@ -164,20 +164,9 @@ static NSString * const reuseIdentifier = @"Cell";
 //        [self initCommentViewController];
 
 
-        //异步
-        //1.获得全局的并发队列
-        dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        //2.添加任务到队列中，就可以执行任务
-        //异步函数：具备开启新线程的能力
-        dispatch_async(queue, ^{
-            //请求数据
-            NSLog(@"开始请求数据");
-            
-            //todo
-            [self getMPShareInfo];
-            
-            [self postRequestComplete:@"0" andRequestNum:@"6"];
-        });      
+        [self getMPShareInfo];
+        
+        [self postRequestComplete:@"0" andRequestNum:@"6"];
     }
     
     
@@ -412,7 +401,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma collectionView controller
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-     NSLog(@"数组长度:%ld",[_arrayOfCells count]);
+//     NSLog(@"数组长度:%ld",[_arrayOfCells count]);
     
     return [_arrayOfCells count];//为了测试，虚拟3倍数据
 //    return  n;
@@ -420,7 +409,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView2 cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"index controller indexPath = %ld",indexPath.row);
+//    NSLog(@"index controller indexPath = %ld",indexPath.row);
 //    if (indexPath.row+1>_arrayOfCells.count) {
 //        NSLog(@"异常！cell count = %ld",collectionView.visibleCells.count);
 //    }
@@ -529,20 +518,20 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 #pragma mark
-- (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"index viewWillAppear");
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-     NSLog(@"index viewDidAppear");
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    NSLog(@"index viewWillDisappear");
-}
-- (void)viewDidDisappear:(BOOL)animated{
-    NSLog(@"index viewDidDisappear");
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    NSLog(@"index viewWillAppear");
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//     NSLog(@"index viewDidAppear");
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    NSLog(@"index viewWillDisappear");
+//}
+//- (void)viewDidDisappear:(BOOL)animated{
+//    NSLog(@"index viewDidDisappear");
+//}
 
 
 #pragma 注册
@@ -559,7 +548,7 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     else{
         NSString *user_token = [[NSString alloc]initWithString:[userDefaults objectForKey:@"user_token"]];//如果不存在usertoken,则不能赋值
-        NSLog(@"%@",[userDefaults objectForKey:@"user_token"]);
+//        NSLog(@"%@",[userDefaults objectForKey:@"user_token"]);
         
         NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:
                              user_token,@"user_token",
@@ -1247,10 +1236,7 @@ static NSString * const reuseIdentifier = @"Cell";
         
         //        [self performSelector:@selector(removeFooterFromScrollView) withObject:nil afterDelay:6.0];
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSLog(@"开始请求数据");
-            [self getMoreData];
-        });
+        [self getMoreData];
         
     }
     
@@ -1488,11 +1474,7 @@ static NSString * const reuseIdentifier = @"Cell";
         //        scrollView.contentSize=newContentSize;
 
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSLog(@"开始更新数据");
-            [self updateData];
-            
-        });
+        [self updateData];
         
     }
     
@@ -1624,34 +1606,15 @@ static NSString * const reuseIdentifier = @"Cell";
     //由于头像是button，所以另外以一个imageview请求
     //不能临时搞一个uiimageview，不会重复请求，因此，要在cell中设置一个固定的
     
-    //异步
-    //1.获得全局的并发队列
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-
-//    [cell.imgViewTmp sd_setImageWithURL:urlAvarl
-//                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                                  if(image){
-//                                      [cell.avataImgBtnSmall setBackgroundImage:image forState:UIControlStateNormal];
-//                                      
-//                                      [cell.avataImgBtnLarge setBackgroundImage:image forState:UIControlStateNormal];
-//                                  }
-//                                  else{
-//                                      [cell.avataImgBtnSmall setBackgroundImage:[UIImage imageNamed:@"评论头像.png"] forState:UIControlStateNormal];
-//                                      
-//                                      [cell.avataImgBtnLarge setBackgroundImage:[UIImage imageNamed:@"评论头像.png"] forState:UIControlStateNormal];
-//                                  }
-//                              }];
-        
-        [HSDataFormatHandle getImageWithUri:avatarUrl isYaSuo:true imageTarget:cell.imgViewTmp defaultImage:[UIImage imageNamed:@"评论头像"] andRequestCB:^(UIImage *image) {
+    [HSDataFormatHandle getImageWithUri:avatarUrl isYaSuo:true imageTarget:cell.imgViewTmp defaultImage:[UIImage imageNamed:@"评论头像"] andRequestCB:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
             [cell.avataImgBtnSmall setBackgroundImage:image forState:UIControlStateNormal];
             
             [cell.avataImgBtnLarge setBackgroundImage:image forState:UIControlStateNormal];
-        }];
 
-    });
+        });
+    }];
+
 
     
     
@@ -1721,20 +1684,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark 重新加载数据
 - (void)reloadDataByNotification{
-    //异步
-    //1.获得全局的并发队列
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-        //请求数据
-        NSLog(@"开始请求数据");
-        
-        //todo
-        [self getMPShareInfo];
-        
-        [self postRequestComplete:@"0" andRequestNum:@"20"];
-    });
+    [self getMPShareInfo];
+    
+    [self postRequestComplete:@"0" andRequestNum:@"20"];
 
 }
 

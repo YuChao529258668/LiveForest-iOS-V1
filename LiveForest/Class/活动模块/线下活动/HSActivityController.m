@@ -78,20 +78,10 @@ static NSString * const reuseIdentifier = @"Cell";
         [self initCardViewController];
         
         
-        //异步
-        //1.获得全局的并发队列
-        dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        //2.添加任务到队列中，就可以执行任务
-        //异步函数：具备开启新线程的能力
-        dispatch_async(queue, ^{
-            //请求数据
-            NSLog(@"开始请求数据");
-            
-            //todo
-            [self getMPShareInfo];
-            
-            [self postRequestComplete];
-        });
+        [self getMPShareInfo];
+        
+        [self postRequestComplete];
+
 
 }
     return self;
@@ -255,7 +245,7 @@ static NSString * const reuseIdentifier = @"Cell";
     cardView.tableView.delegate = cardViewController;
     cardView.tableView.dataSource = cardViewController;
 //    cardView.tableView.panGestureRecognizer.delegate=cardViewController;
-//    NSLog(@"%@",cardView.tableView.panGestureRecognizer.delegate);
+//    HSLog(@"%@",cardView.tableView.panGestureRecognizer.delegate);
     if([_arrayOfCells count]>indexPath.row){
         //官方分享赋值
 //        [self setValueForCell:cardView
@@ -521,7 +511,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
-//     NSLog(@"activity viewWillAppear");
+//     HSLog(@"activity viewWillAppear");
 //    //异步
 //    //1.获得全局的并发队列
 //    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -529,7 +519,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //    //异步函数：具备开启新线程的能力
 //    dispatch_async(queue, ^{
 //        //请求数据
-//        NSLog(@"开始请求数据");
+//        HSLog(@"开始请求数据");
 //        
 //        //todo
 //        [self getMPShareInfo];
@@ -560,7 +550,7 @@ static NSString * const reuseIdentifier = @"Cell";
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
         if(![userDefaults objectForKey:@"user_token"]){
-            NSLog(@"user_token为空，");
+            HSLog(@"user_token为空，");
         }
         else{
             NSString *user_token = [[NSString alloc]initWithString:[userDefaults objectForKey:@"user_token"]];//如果不存在usertoken,则不能赋值
@@ -568,8 +558,8 @@ static NSString * const reuseIdentifier = @"Cell";
             NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:user_token,@"user_token",cell.activity_id,@"activity_id",nil];
             NSDictionary *requestData = [[NSDictionary alloc] initWithObjectsAndKeys:[dic JSONString],@"requestData", nil];
             //        [self httpInit];
-            NSLog(@"user_token:%@",user_token);
-            NSLog(@"activity_id:%@",cell.activity_id);
+            HSLog(@"user_token:%@",user_token);
+            HSLog(@"activity_id:%@",cell.activity_id);
             
             //参加活动
             [self.requestDataCtrl doActivityAttend:requestData andRequestCB:^(BOOL code,id responseObject, NSString *error){
@@ -615,7 +605,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //                            break;
 
                     ShowHud(@"网络错误", NO);
-                    NSLog(@"请求失败，%@",error);
+                    HSLog(@"请求失败，%@",error);
                 }
                 cell.joinActivityBtn.userInteractionEnabled = YES;
             }];
@@ -637,7 +627,7 @@ static NSString * const reuseIdentifier = @"Cell";
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
         if(![userDefaults objectForKey:@"user_token"]){
-            NSLog(@"user_token为空，");
+            HSLog(@"user_token为空，");
         }
         else{
             NSString *user_token = [[NSString alloc]initWithString:[userDefaults objectForKey:@"user_token"]];//如果不存在usertoken,则不能赋值
@@ -645,8 +635,8 @@ static NSString * const reuseIdentifier = @"Cell";
             NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:user_token,@"user_token",cell.activity_id,@"activity_id",nil];
             NSDictionary *requestData = [[NSDictionary alloc] initWithObjectsAndKeys:[dic JSONString],@"requestData", nil];
             //        [self httpInit];
-            NSLog(@"user_token:%@",user_token);
-            NSLog(@"activity_id:%@",cell.activity_id);
+            HSLog(@"user_token:%@",user_token);
+            HSLog(@"activity_id:%@",cell.activity_id);
             
 //            doActivityAttendCancel
             [self.requestDataCtrl doActivityAttend:requestData andRequestCB:^(BOOL code,id responseObject, NSString *error){
@@ -688,7 +678,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //                        default:
 //                            break;
                     ShowHud(@"网络错误", NO);
-                    NSLog(@"请求失败，%@",error);
+                    HSLog(@"请求失败，%@",error);
                 }
                 
                 cell.cancelActivityBtn.userInteractionEnabled = YES;
@@ -712,7 +702,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 #pragma 三个按钮
 - (void) createActivity{
-    NSLog(@"create activity");
+    HSLog(@"create activity");
     UIWindow *appWindow = [[UIApplication sharedApplication] keyWindow];
 //    HSCreatActivityViewController *_createActivityVC = [[HSCreatActivityViewController alloc]init];不能用这种方式，因为局部变量会被释放掉，必须全局声明
     _createActivityVC=[[HSCreatActivityViewController alloc]init];
@@ -733,10 +723,10 @@ static NSString * const reuseIdentifier = @"Cell";
 //    [self presentViewController:createActivityVC animated:YES completion:nil];
 }
 - (void) findActivity{
-    NSLog(@"findActivity");
+    HSLog(@"findActivity");
 }
 - (void) NotiBtn{
-    NSLog(@"NotiBtn");
+    HSLog(@"NotiBtn");
 }
 
 #pragma mark 官方分享数据持久化
@@ -817,7 +807,7 @@ static NSString * const reuseIdentifier = @"Cell";
         //为 galleryImage赋值
         if([MPImg count]>0){
             _galleryImages = MPImg;
-            NSLog(@"_galleryImages赋值成功");
+            HSLog(@"_galleryImages赋值成功");
             // First Load
             dispatch_async(dispatch_get_main_queue(), ^{ /* do UI things */
                 [self changeSlide];
@@ -859,7 +849,7 @@ static NSString * const reuseIdentifier = @"Cell";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     if(![userDefaults objectForKey:@"user_token"]){
-        NSLog(@"user_token为空，");
+        HSLog(@"user_token为空，");
     }
     else{
         NSString *user_token = [[NSString alloc]initWithString:[userDefaults objectForKey:@"user_token"]];//如果不存在usertoken,则不能赋值
@@ -886,15 +876,15 @@ static NSString * const reuseIdentifier = @"Cell";
                         //                                   //异步函数：具备开启新线程的能力
                         //                                   dispatch_async(queue, ^{
                         //                                       //请求数据
-                        //                                       NSLog(@"异步缓存数据");
+                        //                                       HSLog(@"异步缓存数据");
                         //                                       //存储到本地sqlite
                         ////                                       [_sqlDB removeTable:@"HSIndexMPTable"];
                         //                                       if(![_sqlDB queryData:@"HSIndexMPTable"]){
                         //
                         //                                           [_sqlDB saveDataList:@"HSIndexMPTable" andData:[_officialArray JSONString]];
                         //
-                        ////                                           NSLog(@"[_officialArray ]:%@",[_officialArray class]);
-                        ////                                           NSLog(@"[_officialArray JSONString]%@",[[_officialArray JSONString] class]);
+                        ////                                           HSLog(@"[_officialArray ]:%@",[_officialArray class]);
+                        ////                                           HSLog(@"[_officialArray JSONString]%@",[[_officialArray JSONString] class]);
                         //                                       }else{
                         //                                           //更新
                         //                                           //json序列化
@@ -904,25 +894,25 @@ static NSString * const reuseIdentifier = @"Cell";
                         ////                                           NSString *str = [_sqlDB queryData:@"HSIndexMPTable"];
                         //////                                           JSONDecoder *json = [[JSONDecoder alloc]init];
                         ////
-                        ////                                           NSLog(@"query:%@",[[str objectFromJSONString] class]);
+                        ////                                           HSLog(@"query:%@",[[str objectFromJSONString] class]);
                         ////                                           NSArray *arr =[str objectFromJSONString];
-                        ////                                           NSLog(@"query:%@",arr);
+                        ////                                           HSLog(@"query:%@",arr);
                         ////                                       }
                         //                                   });
                         
                         
                     }
                     else{
-                        NSLog(@"官方活动为空");
+                        HSLog(@"官方活动为空");
                     }
                     
                 }
                 else{
-                    NSLog(@"获取官方活动为空");
+                    HSLog(@"获取官方活动为空");
                 }
             }
             else{
-                NSLog(@"请求官方活动失败,异常");
+                HSLog(@"请求官方活动失败,异常");
             }
         }];
 
@@ -937,21 +927,21 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     //构造请求数据
     //获取用户token
-    //NSLog(@"postRequestComplete");
+    //HSLog(@"postRequestComplete");
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     //todo，应该给游客固定的token
     if(![userDefaults objectForKey:@"user_token"]){
-        NSLog(@"user_token为空，");
+        HSLog(@"user_token为空，");
     }
     else{
         NSString *user_token = [[NSString alloc]initWithString:[userDefaults objectForKey:@"user_token"]];//如果不存在usertoken,则不能赋值
-        NSLog(@"%@",[userDefaults objectForKey:@"user_token"]);
+        HSLog(@"%@",[userDefaults objectForKey:@"user_token"]);
         
         NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:user_token,@"user_token",nil];
         NSDictionary *requestData = [[NSDictionary alloc] initWithObjectsAndKeys:
                                      [dic JSONString],@"requestData", nil];
-        NSLog(@"%@",requestData);
+        HSLog(@"%@",requestData);
 
 //
         [self.requestDataCtrl getMixActivityList:requestData andRequestCB:^(BOOL code,id responseObject, NSString *error){
@@ -985,8 +975,8 @@ static NSString * const reuseIdentifier = @"Cell";
                         if([_officialArray count]>0){
                             [_arrayOfCells addObjectsFromArray:_officialArray];
                             n = [_arrayOfCells count];
-                            //NSLog(@"%@",_arrayOfCells);
-                            //NSLog(@"%li",n);
+                            //HSLog(@"%@",_arrayOfCells);
+                            //HSLog(@"%li",n);
                             
                             if(n>0){
                                 CGRect frame = _collectView.frame;
@@ -1011,17 +1001,17 @@ static NSString * const reuseIdentifier = @"Cell";
                                     
                                     if(!responseObject)
                                     {
-                                        NSLog(@"是字符串类型，为空");
+                                        HSLog(@"是字符串类型，为空");
                                         return;
                                     }else{
-                                        //NSLog(@"%@",[responseObject objectForKey:@"shareList"]);
+                                        //HSLog(@"%@",[responseObject objectForKey:@"shareList"]);
                                         //_temp = [responseObject objectForKey:@"shareList"];
                                         //[_arrayOfCells addObjectsFromArray:_temp];
-                                        //NSLog(@"%@",_temp);
+                                        //HSLog(@"%@",_temp);
                                         [_arrayOfCells addObjectsFromArray:responseObject];
                                         n = [_arrayOfCells count];
-                                        //NSLog(@"%@",_arrayOfCells);
-                                        //NSLog(@"%li",n);
+                                        //HSLog(@"%@",_arrayOfCells);
+                                        //HSLog(@"%li",n);
                                         
                                         if(n>0){
                                             CGRect frame = _collectView.frame;
@@ -1043,7 +1033,7 @@ static NSString * const reuseIdentifier = @"Cell";
                                     
                                 }
                                 else{
-                                    NSLog(@"获取官方推荐活动异常");
+                                    HSLog(@"获取官方推荐活动异常");
                                 }
                             }];
                             
@@ -1055,11 +1045,11 @@ static NSString * const reuseIdentifier = @"Cell";
                     
                 }
                 else{
-                    NSLog(@"活动列表为空");
+                    HSLog(@"活动列表为空");
                 }
             }
             else{
-                NSLog(@"获取推荐活动异常");
+                HSLog(@"获取推荐活动异常");
             }
         }];
 
@@ -1149,7 +1139,7 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     else{
         //使用默认的图片
-        NSLog(@"返回的图片为空：%@",[[dict objectForKey:@"activity_img_path"] class]);
+        HSLog(@"返回的图片为空：%@",[[dict objectForKey:@"activity_img_path"] class]);
         [cell.backgroundImgSmall setImage:[UIImage imageNamed:@"activity_1.jpg"]];
         //        cell.backgroundImgSmall.contentMode = UIViewContentModeScaleAspectFill;
         
@@ -1178,20 +1168,9 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)reloadData{
-    //异步
-    //1.获得全局的并发队列
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-        //请求数据
-        NSLog(@"开始请求数据");
-        
-        //todo
-        [self getMPShareInfo];
-        
-        [self postRequestComplete];
-    });
+    [self getMPShareInfo];
+    
+    [self postRequestComplete];
 
 }
 @end

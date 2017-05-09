@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     NSDictionary *dict = [[NSBundle mainBundle] infoDictionary];
-    NSLog(@"%@",dict);
+//    NSLog(@"%@",dict);
     NSString *appName = dict[@"CFBundleName"];
     NSString *shortVersion = dict[@"CFBundleShortVersionString"];
     

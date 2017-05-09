@@ -108,21 +108,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
            [_mineView.backgroundImage setImage:[UIImage imageWithData:[userDefaults objectForKey:@"user_logo_blurImg"]]];
             
-//
         }
         if([userDefaults objectForKey:@"user_logo_img"])
         {
             _mineView.avarlImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_img"]];
         }
-//        NSLog(@"%f",_mineView.backgroundImage.frame.origin.y);
-//        NSLog(@"%f",_mineView.reflectedImage.frame.origin.y);
-        
-        //todo 有问题，高度不能用clipstobounds
-        _mineView.reflectedImage.transform = CGAffineTransformMakeScale(1.1, -1);
-        _mineView.reflectedImage.clipsToBounds=YES;
-        //解决方案，reflectedImage更改高度
-        _mineView.backgroundImage.transform = CGAffineTransformMakeScale(1.2,1.2);
-        _mineView.backgroundImage.clipsToBounds=YES;
+        _mineView.reflectedImage.transform = CGAffineTransformMakeScale(1, -1);
         
 
 
@@ -160,17 +151,12 @@ static NSString * const reuseIdentifier = @"Cell";
     //    notificationHSMineCellThird
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(shareThird:) name:@"notificationHSMineCellThird" object:nil];
     
-    
-    //异步请求网络数据
-    dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //2.添加任务到队列中，就可以执行任务
-    //异步函数：具备开启新线程的能力
-    dispatch_async(queue, ^{
-        [self setPersonalInfo];
-//        [self getPersonInfo];
+    [self setPersonalInfo];
+    dispatch_after(0.3, dispatch_get_main_queue(), ^{
         [self postRequestComplete];
-        
     });
+
+    
     
     //设置用户按钮点击事件
     UITapGestureRecognizer* _tapGestureRecognizer_attendLabel = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlerUserFanOrFollowingTap:)];
@@ -773,6 +759,52 @@ static NSString * const reuseIdentifier = @"Cell";
 //  请求数据完成后的处理
 - (void)postRequestComplete
 {
+    // 用于演示
+    NSDictionary *dic1 = @{@"user_nickname": @"小红",
+                           @"share_img_path": @[@"http://www.kuaihou.com/uploads/allimg/130130/1-1301300103061P.jpg",
+                                                @"http://www.sznews.com/travel/images/attachement/jpg/site3/20150603/7427ea33bc7416d8b93b4c.jpg",
+                                                @"http://img2.niutuku.com/desk/anime/1913/1913-7515.jpg",
+                                                @"http://t1.niutuku.com/960/22/22-435778.jpg",
+                                                @"http://g.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=aef92f0b09f79052ef4a4f3a39c3fbfc/aa64034f78f0f736219e10190a55b319ebc41341.jpg",
+                                                @"http://pic.wenwen.soso.com/p/20091004/20091004223808-749075817.jpg",
+                                                @"http://dynamic-image.yesky.com/600x-/uploadImages/2012/229/62SW1O3LI8UQ.jpg",
+                                                @"http://e.hiphotos.baidu.com/zhidao/pic/item/342ac65c103853431f0bcc079313b07ecb8088d4.jpg",
+                                                @"http://s3.sinaimg.cn/orignal/4c42990eaf4e962a49782"],
+                           @"share_like_num": @"0",
+                           @"share_id": @"0",
+                           @"comment_count": @"0"
+                           };
+    NSDictionary *dic2 = @{@"user_nickname": @"小红",
+                           @"share_img_path": @[@"http://www.sznews.com/travel/images/attachement/jpg/site3/20150603/7427ea33bc7416d8b93b4c.jpg",
+                                                @"http://img2.niutuku.com/desk/anime/1913/1913-7515.jpg",
+                                                @"http://t1.niutuku.com/960/22/22-435778.jpg",
+                                                @"http://g.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=aef92f0b09f79052ef4a4f3a39c3fbfc/aa64034f78f0f736219e10190a55b319ebc41341.jpg",
+                                                @"http://pic.wenwen.soso.com/p/20091004/20091004223808-749075817.jpg",
+                                                @"http://dynamic-image.yesky.com/600x-/uploadImages/2012/229/62SW1O3LI8UQ.jpg",
+                                                @"http://e.hiphotos.baidu.com/zhidao/pic/item/342ac65c103853431f0bcc079313b07ecb8088d4.jpg",
+                                                @"http://s3.sinaimg.cn/orignal/4c42990eaf4e962a49782"],
+                           @"share_like_num": @"0",
+                           @"share_id": @"1",
+                           @"comment_count": @"0"
+                           };
+    NSArray *responseObject = @[dic1, dic2, dic1];
+    _arrayOfCells = [[NSMutableArray alloc] initWithArray:responseObject];
+    n = [_arrayOfCells count];
+    CGRect frame = _collectView.frame;
+    
+    if (factor==factorMax) {
+        frame.size.width =kScreenWidth*[_arrayOfCells count];
+    } else {
+        frame.size.width =kScreenWidth*[_arrayOfCells count]*0.45;
+    }
+    
+    scrollView.contentSize = frame.size;
+    _collectView.frame = frame;
+    
+    [_collectView reloadData];
+    return;
+    
+    
     
     
     //构造请求数据
@@ -785,86 +817,36 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     
     NSString *user_token = [[NSString alloc]initWithString:[userDefaults objectForKey:@"user_token"]];
-    NSLog(@"%@",[userDefaults objectForKey:@"user_token"]);
+//    NSLog(@"%@",[userDefaults objectForKey:@"user_token"]);
     
     NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:user_token,@"user_token",nil];
     NSDictionary *requestData = [[NSDictionary alloc] initWithObjectsAndKeys:
                                  [dic JSONString],@"requestData", nil];
-    NSLog(@"%@",requestData);
+//    NSLog(@"%@",requestData);
 
     [self.requestDataCtrl getShareList:requestData andRequestCB:^(BOOL code,id responseObject, NSString *error){
         if(code){
-            
-            //                       NSMutableArray *tmp = [[NSMutableArray alloc]initWithArray:[responseObject objectForKey:@"shareList"]];
             if(responseObject){
-                //_arrayOfCells = [responseObject objectForKey:@"shareList"];
-                //                       NSLog(@"data count:%ld",[_arrayOfCells count]);
-                //                       NSLog(@"[responseObject]:%@",[responseObject objectForKey:@"shareList"]);
                 _arrayOfCells = [[NSMutableArray alloc] initWithArray:responseObject];
                 n = [_arrayOfCells count];
-                //NSLog(@"%@",[responseObject objectForKey:@"shareList"] );
-//                if(n>3){ //数组长度大于0，在更新
-                    //因为是异步请求，所以等请求玩成后，重新加载数据
-                    //                       collectionView.frame = CGRectMake(0, 0, kScreenWidth*([_arrayOfCells count]),kScreenHeight);
-                    CGRect frame = _collectView.frame;
-                    
-                    if (factor==factorMax) {
-                        frame.size.width =kScreenWidth*[_arrayOfCells count];
-                    } else {
-                        frame.size.width =kScreenWidth*[_arrayOfCells count]*0.45;
-                    }
-                    
-                    scrollView.contentSize = frame.size;
-                    _collectView.frame = frame;
-                    
-                    [_collectView reloadData];
-//                }else{
-////                    [self.requestDataCtrl getMPShareList:requestData andRequestCB:^(BOOL code,id responseObject, NSString *error){
-////                        if(code){
-////                            
-////                            if(!responseObject)
-////                            {
-////                                NSLog(@"是字符串类型，为空");
-////                                return;
-////                            }else{
-////                                [_arrayOfCells addObjectsFromArray:responseObject];
-////                                n = [_arrayOfCells count];
-////                                //NSLog(@"%@",_arrayOfCells);
-////                                //NSLog(@"%li",n);
-////                                
-////                                if(n>0){ //数组长度大于0，在更新
-////                                    //因为是异步请求，所以等请求玩成后，重新加载数据
-////                                    //                       collectionView.frame = CGRectMake(0, 0, kScreenWidth*([_arrayOfCells count]),kScreenHeight);
-////                                    CGRect frame = _collectView.frame;
-////                                    if (factor==factorMax) {
-////                                        frame.size.width =kScreenWidth*[_arrayOfCells count];
-////                                    } else {
-////                                        frame.size.width =kScreenWidth*[_arrayOfCells count]*0.45;
-////                                    }
-////                                    scrollView.contentSize = frame.size;
-////                                    _collectView.frame = frame;
-////                                    
-////                                    [_collectView reloadData];
-////                                }
-////                            }
-////                            
-////                            
-//                        }
-//                        else{
-//                            NSLog(@"获取官方分享异常");
-//                        }
-//                    }];
-        
-//                }
+                CGRect frame = _collectView.frame;
+                
+                if (factor==factorMax) {
+                    frame.size.width =kScreenWidth*[_arrayOfCells count];
+                } else {
+                    frame.size.width =kScreenWidth*[_arrayOfCells count]*0.45;
+                }
+                
+                scrollView.contentSize = frame.size;
+                _collectView.frame = frame;
+                
+                [_collectView reloadData];
             }
-     
-            
         }
         else{
             NSLog(@"请求个人分享数据异常");
         }
     }];
-    
 }
 
 #pragma topImageClick
@@ -1041,55 +1023,73 @@ static NSString * const reuseIdentifier = @"Cell";
                                 }
                             }];
 }
+
 #pragma mark 设置个人信息
 - (void) setPersonalInfo{
+    
+    // 用于演示
+    NSUserDefaults *u = [NSUserDefaults standardUserDefaults];
+//    [u setObject:@"http://p.store.itangyuan.com/p/chapter/attachment/etMsEgjseS/EgfwEgfSegAuEtjUE_EtETuh4bsOJgetjmilgNmii_EV87ocJn9L5Cb.jpg" forKey:@"user_logo_img"];
+//    [u setObject:@"" forKey:@"user_logo_blurImg"];
+    [u setObject:@"小蓝" forKey:@"user_nickname"];
+    [u setObject:@"超级大帅锅" forKey:@"user_introduction"];
+    [u setObject:@"0" forKey:@"user_following_num"];
+    [u setObject:@"0" forKey:@"user_fans_num"];
+    [u setObject:@"10" forKey:@"user_credit_num"];
+    [self configSubviews:u];
+    return;
+    
+    
+    
+    
     //6.20 by qiang
     //获取个人信息
     self.userInfoControl = [[HSUserInfoHandler alloc]init];
     [self.userInfoControl getUserInfoAndSaveHandler:^(BOOL completion){
         if(completion){
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            //判断是否已经有个人信息
-            if([userDefaults objectForKey:@"user_logo_img"]){
-                _mineView.avarlImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_img"]];
-            }
-            else{
-                _mineView.avarlImage.image=[UIImage imageNamed:@"Home.jpg"];
-            }
-            //背景头像模糊
-            if([userDefaults objectForKey:@"user_logo_blurImg"]){
-                _mineView.backgroundImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_blurImg"]];
-                _mineView.reflectedImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_blurImg"]];
-            }
-            else{
-                _mineView.backgroundImage.image=[UIImage imageNamed:@"HomeBlur.png"];
-                _mineView.reflectedImage.image=[UIImage imageNamed:@"HomeBlur.png"];
-            }
-            //昵称
-            if([userDefaults objectForKey:@"user_nickname"]){
-                [_mineView.nickName setText:[userDefaults objectForKey:@"user_nickname"]];
-            }
-            //描述
-            if([userDefaults objectForKey:@"user_introduction"]){
-                [_mineView.descriptionLabel setText:[userDefaults objectForKey:@"user_introduction"]];
-            }
-            //关注
-            if([userDefaults objectForKey:@"user_following_num"]){
-                [_mineView.attendPersons setText:[userDefaults objectForKey:@"user_following_num"]];
-            }
-            //粉丝
-            if([userDefaults objectForKey:@"user_fans_num"]){
-                [_mineView.fansPersons setText:[userDefaults objectForKey:@"user_fans_num"]];
-            }
-            //积分
-            if([userDefaults objectForKey:@"user_credit_num"]){
-                [_mineView.grades setText:[userDefaults objectForKey:@"user_credit_num"]];
-            }
+            [self configSubviews:userDefaults];
         }
     }];
-    
-    
-    
+}
+
+- (void)configSubviews:(NSUserDefaults *)userDefaults {
+    //判断是否已经有个人信息
+    if([userDefaults objectForKey:@"user_logo_img"]){
+        _mineView.avarlImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_img"]];
+    }
+    else{
+        _mineView.avarlImage.image=[UIImage imageNamed:@"Home.jpg"];
+    }
+    //背景头像模糊
+    if([userDefaults objectForKey:@"user_logo_blurImg"]){
+        _mineView.backgroundImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_blurImg"]];
+        _mineView.reflectedImage.image = [UIImage imageWithData:[userDefaults objectForKey:@"user_logo_blurImg"]];
+    }
+    else{
+        _mineView.backgroundImage.image=[UIImage imageNamed:@"HomeBlur.png"];
+        _mineView.reflectedImage.image=[UIImage imageNamed:@"HomeBlur.png"];
+    }
+    //昵称
+    if([userDefaults objectForKey:@"user_nickname"]){
+        [_mineView.nickName setText:[userDefaults objectForKey:@"user_nickname"]];
+    }
+    //描述
+    if([userDefaults objectForKey:@"user_introduction"]){
+        [_mineView.descriptionLabel setText:[userDefaults objectForKey:@"user_introduction"]];
+    }
+    //关注
+    if([userDefaults objectForKey:@"user_following_num"]){
+        [_mineView.attendPersons setText:[userDefaults objectForKey:@"user_following_num"]];
+    }
+    //粉丝
+    if([userDefaults objectForKey:@"user_fans_num"]){
+        [_mineView.fansPersons setText:[userDefaults objectForKey:@"user_fans_num"]];
+    }
+    //积分
+    if([userDefaults objectForKey:@"user_credit_num"]){
+        [_mineView.grades setText:[userDefaults objectForKey:@"user_credit_num"]];
+    }
 }
 
 -(void) logOut{

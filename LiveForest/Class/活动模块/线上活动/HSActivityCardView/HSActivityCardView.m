@@ -180,7 +180,7 @@ static NSString *reuseIdentifier = @"HSActivityLargeCardCell";
 //        NSLog(@"activity_img_path %@",picActivityInfo.activity_img_path[0]);
 //        NSLog(@"url %@",[NSURL URLWithString:picActivityInfo.activity_img_path[0]] );
         NSString *urlString = picActivityInfo.activity_img_path[0];
-        NSLog(@"HSActivityCardView  %s,%@",__func__,urlString);
+//        NSLog(@"HSActivityCardView  %s,%@",__func__,urlString);
         HSActivityLargeCardTopCell *topCell = [[HSActivityLargeCardTopCell alloc]init];
 
         [HSDataFormatHandle getImageWithUri:urlString isYaSuo:true imageTarget:topCell.backgroundImg defaultImage:[UIImage imageNamed:@"default.png"] andRequestCB:^(UIImage *image) {
@@ -302,7 +302,7 @@ static NSString *reuseIdentifier = @"HSActivityLargeCardCell";
         }
     }
     NSIndexPath *indexPath = [cv indexPathForCell:cell];
-    NSLog(@"%@",indexPath);
+//    NSLog(@"%@",indexPath);
     
 }
 
@@ -364,7 +364,7 @@ static NSString *reuseIdentifier = @"HSActivityLargeCardCell";
         }
     }
     NSIndexPath *indexPath = [cv indexPathForCell:cell];
-    NSLog(@"%ld",indexPath.item);
+//    NSLog(@"%ld",indexPath.item);
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"topBtnClickToScale" object:indexPath];
 

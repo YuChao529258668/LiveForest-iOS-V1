@@ -21,6 +21,9 @@
 
 + (NSMutableArray *)gameChartsModelsWithDictionary:(NSDictionary *)dic;
 
+/// 用于演示
++ (NSMutableArray *)test;
+
 @end
 
 

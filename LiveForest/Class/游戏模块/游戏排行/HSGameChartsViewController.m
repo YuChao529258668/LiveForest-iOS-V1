@@ -38,12 +38,15 @@
     self.gameChartsTableView.dataSource = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)getData {
+    
+    // 用于演示
+    self.gameChartsModels = [HSGameChartsModel test];
+    [self.gameChartsTableView reloadData];
+    return;
+    
+    
     [[[HSRequestDataController alloc]init] getMyScoreRankWithCallBack:^(BOOL code, id responseObject, NSString *error) {
         if (code) {
             self.gameChartsModels = [HSGameChartsModel gameChartsModelsWithDictionary:responseObject];
