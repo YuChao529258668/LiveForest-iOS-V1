@@ -1438,6 +1438,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0313531EC1D7310030E02A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0D7480481EB5EA290040C829 /* HSActivityOnlineController.h */,
+				0D7480491EB5EA290040C829 /* HSActivityOnlineController.m */,
+				0D7480451EB5EA290040C829 /* HSActivityCardViewController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		0D6B206A1EB723F6004F6A7F /* www */ = {
 			isa = PBXGroup;
 			children = (
@@ -2294,16 +2304,14 @@
 		0D74802E1EB5EA290040C829 /* 线上活动 */ = {
 			isa = PBXGroup;
 			children = (
-				0D7480481EB5EA290040C829 /* HSActivityOnlineController.h */,
-				0D7480491EB5EA290040C829 /* HSActivityOnlineController.m */,
-				0D74802F1EB5EA290040C829 /* HSActivityCardView */,
-				0D7480451EB5EA290040C829 /* HSActivityCardViewController */,
+				0D0313531EC1D7310030E02A /* Controller */,
+				0D74802F1EB5EA290040C829 /* View */,
 				0D74804A1EB5EA290040C829 /* Model */,
 			);
 			path = "线上活动";
 			sourceTree = "<group>";
 		};
-		0D74802F1EB5EA290040C829 /* HSActivityCardView */ = {
+		0D74802F1EB5EA290040C829 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0D7480301EB5EA290040C829 /* HSActivityCardView.h */,
@@ -2313,6 +2321,7 @@
 				0D7480391EB5EA290040C829 /* TableViewTopCell */,
 				0D74803D1EB5EA290040C829 /* 图片 */,
 			);
+			name = View;
 			path = HSActivityCardView;
 			sourceTree = "<group>";
 		};

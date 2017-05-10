@@ -36,6 +36,15 @@
     //加入向左箭头
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navigationbar_back"] style:UIBarButtonItemStylePlain target:self action:@selector(pop:)];
     
+    UIPanGestureRecognizer* panGestureRecognizer=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
+    panGestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer:panGestureRecognizer];
+    
+
+    
+//    return;
+    
+    
     self.userInfoControl = [[HSUserInfoHandler alloc]init];
     [self.userInfoControl getUserInfoAndSaveHandler:^(BOOL completion){
         if(completion){
@@ -91,22 +100,6 @@
     }];
 
     
-    UIPanGestureRecognizer* panGestureRecognizer=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
-    panGestureRecognizer.delegate = self;
-    [self.view addGestureRecognizer:panGestureRecognizer];
-    
-    
-    
-    
-    //屏幕适配
-    float factor=[UIScreen mainScreen].bounds.size.width/self.view.frame.size.width;
-    
-    self.view.transform = CGAffineTransformMakeScale(factor, factor);
-    //调整缩放后的位置
-    CGRect frame=self.view.frame;
-    frame.origin=CGPointZero;
-    self.view.frame=frame;
-   
 }
 
 

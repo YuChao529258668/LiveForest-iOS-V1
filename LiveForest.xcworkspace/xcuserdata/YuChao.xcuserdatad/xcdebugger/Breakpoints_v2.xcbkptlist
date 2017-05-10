@@ -137,22 +137,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LiveForest/Class/&#x6d3b;&#x52a8;&#x6a21;&#x5757;/&#x7ebf;&#x4e0a;&#x6d3b;&#x52a8;/HSActivityOnlineController.m"
-            timestampString = "515996247.660189"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "663"
-            endingLineNumber = "663"
-            landmarkName = "-getDisplayPicActivity"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "LiveForest/Class/&#x6d3b;&#x52a8;&#x6a21;&#x5757;/&#x7ebf;&#x4e0a;&#x6d3b;&#x52a8;/HSActivityCardViewController/HSActivityCardViewController.m"
             timestampString = "515872851.456254"
             startingColumnNumber = "9223372036854775807"
@@ -198,16 +182,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiveForest/Class/&#x4e3b;&#x6a21;&#x5757;/&#x8bbe;&#x7f6e;&#x6a21;&#x5757;/&#x9080;&#x8bf7;&#x597d;&#x53cb;&#x4e8c;&#x7ef4;&#x7801;/&#x626b;&#x63cf;&#x4e8c;&#x7ef4;&#x7801;/QRViewController.m"
+            timestampString = "516091513.440275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LiveForest/Class/&#x4e3b;&#x6a21;&#x5757;/&#x6839;&#x63a7;&#x5236;&#x5668;/HSViewController.m"
-            timestampString = "515994600.127977"
+            filePath = "LiveForest/Class/&#x4e3b;&#x6a21;&#x5757;/&#x8bbe;&#x7f6e;&#x6a21;&#x5757;/&#x9080;&#x8bf7;&#x597d;&#x53cb;&#x4e8c;&#x7ef4;&#x7801;/&#x626b;&#x63cf;&#x4e8c;&#x7ef4;&#x7801;/QRViewController.m"
+            timestampString = "516093419.974954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "813"
-            endingLineNumber = "813"
-            landmarkName = "-viewWillDisappear:"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "-showMyQR:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

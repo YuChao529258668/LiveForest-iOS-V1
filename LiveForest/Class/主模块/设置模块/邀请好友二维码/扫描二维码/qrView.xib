@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRViewController">
@@ -17,31 +21,62 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="取景框.png" translatesAutoresizingMaskIntoConstraints="NO" id="tgh-QL-vGt">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="取景框.png" translatesAutoresizingMaskIntoConstraints="NO" id="tgh-QL-vGt">
                     <rect key="frame" x="41" y="128" width="239" height="226"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="226" id="qQp-TY-KRW"/>
+                        <constraint firstAttribute="width" constant="239" id="u5w-iY-GWj"/>
+                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-ZO-x1b">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-ZO-x1b">
                     <rect key="frame" x="49" y="136" width="222" height="209"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="222" id="blm-Wp-rxs"/>
+                        <constraint firstAttribute="height" constant="209" id="hp2-cB-q3N"/>
+                    </constraints>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="扫描线.png" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-hk-daV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="扫描线.png" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-hk-daV">
                     <rect key="frame" x="40" y="116" width="240" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="JlP-UP-JXN"/>
+                        <constraint firstAttribute="height" constant="13" id="RID-XU-Gm1"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="将二维码放入框内，自动扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSe-3X-vTZ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码放入框内，自动扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSe-3X-vTZ">
                     <rect key="frame" x="8" y="426" width="304" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="304" id="E0l-8f-UzV"/>
+                        <constraint firstAttribute="height" constant="21" id="qgs-pd-gfP"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的二维码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDD-Is-EAn">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的二维码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDD-Is-EAn">
                     <rect key="frame" x="60" y="466" width="201" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="L1Q-gl-fGb"/>
+                        <constraint firstAttribute="width" constant="201" id="ePf-tZ-DGx"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="b8G-ZO-x1b" firstAttribute="top" secondItem="lBF-hk-daV" secondAttribute="bottom" constant="7" id="5aK-g6-4Q5"/>
+                <constraint firstItem="tgh-QL-vGt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="128" id="8F5-Tk-lll"/>
+                <constraint firstItem="lBF-hk-daV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BUK-Cg-NTS"/>
+                <constraint firstItem="b8G-ZO-x1b" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RBm-eJ-8t1"/>
+                <constraint firstItem="lBF-hk-daV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="116" id="WdK-VW-qtC"/>
+                <constraint firstAttribute="bottom" secondItem="RDD-Is-EAn" secondAttribute="bottom" constant="81" id="e79-gm-Eav"/>
+                <constraint firstItem="RDD-Is-EAn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jm4-bJ-gcw"/>
+                <constraint firstItem="RDD-Is-EAn" firstAttribute="top" secondItem="hSe-3X-vTZ" secondAttribute="bottom" constant="19" id="nOr-XA-t3F"/>
+                <constraint firstItem="tgh-QL-vGt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="o6Z-eA-JUb"/>
+                <constraint firstItem="hSe-3X-vTZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ort-Rk-8aI"/>
+            </constraints>
         </view>
     </objects>
     <resources>

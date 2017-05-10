@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSQRDisplayVC">
@@ -18,37 +22,76 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lf3-0v-VhX">
-                    <rect key="frame" x="57" y="224" width="197" height="200"/>
+                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lf3-0v-VhX">
+                    <rect key="frame" x="62" y="224" width="197" height="200"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="197" id="Hqw-Id-04x"/>
+                        <constraint firstAttribute="height" constant="200" id="cKr-Rc-Qix"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="扫一扫  关注我" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-Sm-VS9">
-                    <rect key="frame" x="102" y="442" width="112" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫一扫  关注我" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-Sm-VS9">
+                    <rect key="frame" x="104" y="442" width="112" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3D7-1x-SxB"/>
+                        <constraint firstAttribute="width" constant="112" id="mMx-o3-vFn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-Q5-DLM">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="评论头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-Q5-DLM">
                     <rect key="frame" x="127" y="77" width="66" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="7mE-8G-Lnw"/>
+                        <constraint firstAttribute="width" constant="66" id="TMc-Fy-my6"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qr_focus.png" translatesAutoresizingMaskIntoConstraints="NO" id="gzW-U3-y22">
-                    <rect key="frame" x="45" y="214" width="220" height="220"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr_focus.png" translatesAutoresizingMaskIntoConstraints="NO" id="gzW-U3-y22">
+                    <rect key="frame" x="50" y="214" width="220" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="9dE-0I-UsH"/>
+                        <constraint firstAttribute="height" constant="220" id="Sak-x8-88c"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jaspar Wang" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eap-Kp-RVv">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jaspar Wang" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eap-Kp-RVv">
                     <rect key="frame" x="28" y="152" width="264" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="264" id="sJN-BI-QXW"/>
+                        <constraint firstAttribute="height" constant="36" id="vNu-FD-7jb"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="性别男.png" translatesAutoresizingMaskIntoConstraints="NO" id="OWI-Kj-rCT">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="性别男.png" translatesAutoresizingMaskIntoConstraints="NO" id="OWI-Kj-rCT">
                     <rect key="frame" x="183" y="122" width="21" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="HUv-wc-fCe"/>
+                        <constraint firstAttribute="width" constant="21" id="Jkz-S4-l4e"/>
+                    </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OWI-Kj-rCT" firstAttribute="leading" secondItem="cZ8-Q5-DLM" secondAttribute="trailing" constant="-10" id="2ly-yZ-Xuh"/>
+                <constraint firstItem="Lf3-0v-VhX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BVK-5J-ssn"/>
+                <constraint firstItem="Eap-Kp-RVv" firstAttribute="top" secondItem="OWI-Kj-rCT" secondAttribute="bottom" constant="8" id="CeU-9a-kNl"/>
+                <constraint firstItem="Lf3-0v-VhX" firstAttribute="top" secondItem="Eap-Kp-RVv" secondAttribute="bottom" constant="36" id="NmR-8j-OTI"/>
+                <constraint firstItem="Eap-Kp-RVv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OEe-Pp-BJZ"/>
+                <constraint firstItem="cZ8-Q5-DLM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="77" id="SmC-Qv-qRB"/>
+                <constraint firstItem="Lea-Sm-VS9" firstAttribute="top" secondItem="gzW-U3-y22" secondAttribute="bottom" constant="8" id="Zpl-Cd-Dhd"/>
+                <constraint firstItem="gzW-U3-y22" firstAttribute="top" secondItem="Eap-Kp-RVv" secondAttribute="bottom" constant="26" id="cNq-86-fNP"/>
+                <constraint firstItem="OWI-Kj-rCT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="122" id="fqC-BT-wMS"/>
+                <constraint firstItem="Lea-Sm-VS9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mTz-ok-9u3"/>
+                <constraint firstItem="cZ8-Q5-DLM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="r6V-sc-4Th"/>
+                <constraint firstItem="gzW-U3-y22" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yaH-jY-Q4Q"/>
+            </constraints>
         </view>
     </objects>
     <resources>
         <image name="qr_focus.png" width="544" height="545"/>
         <image name="性别男.png" width="43" height="43"/>
+        <image name="评论头像.png" width="191" height="191"/>
     </resources>
 </document>

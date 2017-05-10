@@ -200,6 +200,7 @@ static float factor;
     UIActionSheet *as=[[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选择", nil];
     [as showInView:self.view];
 }
+
 #pragma mark - 修改用户昵称
 -(void)editUserNickname
 {

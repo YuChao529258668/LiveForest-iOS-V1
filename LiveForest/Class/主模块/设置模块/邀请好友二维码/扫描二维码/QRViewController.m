@@ -87,7 +87,12 @@ static NSTimeInterval kQrLineanimateDuration = 0.02;
     }
     
     // 条码类型 AVMetadataObjectTypeQRCode
-    _output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+//    _output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+    
+    // 上面的代码会崩溃，提示 *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -[AVCaptureMetadataOutput setMetadataObjectTypes:] Unsupported type found - use -availableMetadataObjectTypes'
+    _output.metadataObjectTypes = _output.availableMetadataObjectTypes;
+    
+    
     
     //增加条形码扫描
 //    _output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code,
@@ -103,7 +108,6 @@ static NSTimeInterval kQrLineanimateDuration = 0.02;
 ////    self.view.backgroundColor = [UIColor grayColor];
 //    self.view.layer.backgroundColor = [UIColor grayColor];
     
-    [_session startRunning];
     
     
 //    CGRect screenRect = [UIScreen mainScreen].bounds;
@@ -125,19 +129,34 @@ static NSTimeInterval kQrLineanimateDuration = 0.02;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:kQrLineanimateDuration target:self selector:@selector(show) userInfo:nil repeats:YES];
     [timer fire];
     
-    //屏幕适配
-    float factor=[UIScreen mainScreen].bounds.size.width/self.view.frame.size.width;
     
-    self.view.transform = CGAffineTransformMakeScale(factor, factor);
-    //调整缩放后的位置
-    CGRect frame=self.view.frame;
-    frame.origin=CGPointZero;
-    self.view.frame=frame;
+//    //屏幕适配
+//    float factor=[UIScreen mainScreen].bounds.size.width/self.view.frame.size.width;
+//    
+//    self.view.transform = CGAffineTransformMakeScale(factor, factor);
+//    //调整缩放后的位置
+//    CGRect frame=self.view.frame;
+//    frame.origin=CGPointZero;
+//    self.view.frame=frame;
+    
     
     //手势
     UIPanGestureRecognizer* panGestureRecognizer=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
     panGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:panGestureRecognizer];
+    
+
+    //    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
+    //        [_session startRunning];
+    //    });
+    
+    //    dispatch_async(dispatch_get_main_queue(), ^{
+    //        [_session startRunning];
+    //    });
+
+    dispatch_async(dispatch_queue_create( "session queue", DISPATCH_QUEUE_SERIAL), ^{
+        [_session startRunning];
+    });
     
 
 }
