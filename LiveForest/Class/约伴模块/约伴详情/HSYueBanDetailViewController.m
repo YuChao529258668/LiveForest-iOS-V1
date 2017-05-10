@@ -24,6 +24,7 @@
 
 @end
 
+
 @implementation HSYueBanDetailViewController
 @synthesize MyYueBanListTableView;
 @synthesize isMe;
@@ -159,10 +160,10 @@
     if (indexPath.section == 2) {
         info = self.strangersArray[indexPath.row];
     }
-    static HSVisitMineController *vmvc;
-    vmvc = [[HSVisitMineController alloc]init];
-    [vmvc requestPersonalInfoWithUserID:info.user_id];
-    [[UIApplication sharedApplication].keyWindow addSubview:vmvc.view];
+//    static HSVisitMineController *vmvc;
+//    vmvc = [[HSVisitMineController alloc]init];
+//    [vmvc requestPersonalInfoWithUserID:info.user_id];
+//    [[UIApplication sharedApplication].keyWindow addSubview:vmvc.view];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -248,10 +249,17 @@
 
 -(void)getYueBanDetailWithId{
     
-    NSLog(@"HSFrientListViewController-initData");
+//    NSLog(@"HSFrientListViewController-initData");
     
     //初始化空数组
     self.yuebanUserInfo = [[HSYueBanUserInfoList alloc]init];
+    
+    // 用于演示
+    self.yuebanDetail = [HSMyYueBanDetailList test];
+    [self hangleData];
+    return;
+    
+    
     
     //获取用户token
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -276,33 +284,35 @@
                 NSLog(@"请求数据出错");
             }else{
                 self.yuebanDetail = [[HSMyYueBanDetailList alloc]initWithDic:object];
-                
-                self.friendsArray = [[NSMutableArray alloc]initWithArray:self.yuebanDetail.friendsArray];
-                self.strangersArray = [[NSMutableArray alloc]initWithArray:self.yuebanDetail.strangersArray];
-                NSString *isMe1 = [NSString stringWithFormat:@"%@",self.yuebanDetail.is_mine];
-                if([isMe1 isEqualToString:@"1"]){
-                    
-                    self.stopInviteBtn.hidden = NO;
-                }
-                
-                if(!self.isDeal ){
-                    
-                    if ([isMe1 isEqualToString:@"0"]) {
-                        self.ignoreInviteBtn.hidden = NO;
-                        self.wantGoBtn.hidden = NO;
-                        
-                    }
-                }
-                
-                MyYueBanListTableView.alpha = 1.0;
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                
-                [MyYueBanListTableView reloadData];
-            }
-            
-        }];
 
+                [self hangleData];
+            }
+        }];
+}
+
+- (void)hangleData {
     
+    self.friendsArray = [[NSMutableArray alloc]initWithArray:self.yuebanDetail.friendsArray];
+    self.strangersArray = [[NSMutableArray alloc]initWithArray:self.yuebanDetail.strangersArray];
+    NSString *isMe1 = [NSString stringWithFormat:@"%@",self.yuebanDetail.is_mine];
+    if([isMe1 isEqualToString:@"1"]){
+        
+        self.stopInviteBtn.hidden = NO;
+    }
+    
+    if(!self.isDeal ){
+        
+        if ([isMe1 isEqualToString:@"0"]) {
+            self.ignoreInviteBtn.hidden = NO;
+            self.wantGoBtn.hidden = NO;
+            
+        }
+    }
+    
+    MyYueBanListTableView.alpha = 1.0;
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    [MyYueBanListTableView reloadData];
 }
 
 

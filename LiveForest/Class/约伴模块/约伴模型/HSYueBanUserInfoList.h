@@ -42,4 +42,8 @@
 -(instancetype)initWithDic:(NSDictionary *)dict;
 +(instancetype)userInfoWithDic:(NSDictionary *)dict;
 +(NSArray *)userInfoArrayWithArray:(NSArray *)array;
+
+/// 用于演示
++ (NSMutableArray *)test;
+
 @end

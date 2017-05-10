@@ -20,6 +20,7 @@
 
 
 - (IBAction)ChatBtn:(id)sender;
+
 @property(nonatomic,strong)HSYueBanUserInfoList *userInfo;
 
 +(id)yueBaneListCell;

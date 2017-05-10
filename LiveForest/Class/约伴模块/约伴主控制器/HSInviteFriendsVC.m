@@ -266,6 +266,8 @@ static NSString * const receiveAll = @"receiveAllInvites";
 }
 
 - (void)test {
+    [_inviteFriendsView.clickYueBanBtn setTitle:@"createYueBan" forState:UIControlStateDisabled];
+    
     self.inviteFromStrangerArray = [NSMutableArray array];
     for (int i =1; i<5; i++) {
         HSInviteFriendsCard *c = [[HSInviteFriendsCard alloc]init];
@@ -369,14 +371,14 @@ static NSString * const receiveAll = @"receiveAllInvites";
  2、如果名字是：createYueBan，则调用 创建约伴界面
  */
 - (void)yueBanBtnPress:(UIButton *)btn{
-    
-    if([[btn titleForState:UIControlStateDisabled] isEqualToString:@"createYueBan"]){
+    NSString *title = [btn titleForState:UIControlStateDisabled];
+    if([title isEqualToString:@"createYueBan"]){
         //调用 创建约伴界面
         HSAddInviteView  *addInviteView = [[HSAddInviteView alloc]init];
         [addInviteView show];
         
         NSLog(@"创建约伴界面");
-    }else if([[btn titleForState:UIControlStateDisabled] isEqualToString:@"showYueBanDetail"]){
+    }else if([title isEqualToString:@"showYueBanDetail"]){
         //展示约伴详情
         NSLog(@"展示约伴详情");
         [self jumpToQmy];

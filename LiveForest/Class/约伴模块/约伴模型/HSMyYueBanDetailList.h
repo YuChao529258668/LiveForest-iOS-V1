@@ -60,7 +60,7 @@
  */
 @property (nonatomic, copy) NSString *user_birthday;
 /**
- *  约伴创建者设置的约伴预计时间＋创建时间的结果的时间戳。用来算倒计时
+ *  约伴创建者设置的约伴预计时间＋创建时间的结果的时间戳。用来算倒计时。
  */
 @property (nonatomic, copy) NSString *estimated_time;
 /**
@@ -85,8 +85,9 @@
  *  邀请的好友情况
  */
 //@property (nonatomic, strong) NSArray *yuebanFriendsAndState;
+
 /**
- *  邀请的陌生人情况
+ *  邀请的陌生人情况。HSYueBanUserInfoList 的字典信息 
  */
 @property (nonatomic, strong) NSArray *yuebanUserAndState;
 ///**
@@ -102,4 +103,8 @@
 -(instancetype)initWithDic:(NSDictionary *)dict;
 +(instancetype)yueBanDetailWithDic:(NSDictionary *)dict;
 +(NSArray *)yueBanDetailArrayWithArray:(NSArray *)array;
+
+/// 用于演示
++ (HSMyYueBanDetailList *)test;
+
 @end

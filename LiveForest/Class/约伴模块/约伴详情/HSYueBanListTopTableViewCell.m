@@ -25,6 +25,8 @@ static int minToSec = 60.0;
 - (void)awakeFromNib {
     // Initialization code
     
+    [super awakeFromNib];
+    
 //    self.inviteTimeLabel
     self.voiceInfoBtn.hidden = YES;
     self.inviteMessageLabel.hidden = YES;
@@ -52,7 +54,7 @@ static int minToSec = 60.0;
     if ([yuebanDetail.is_mine isEqualToString:@"1"]) {
         NSString *str = [[NSUserDefaults standardUserDefaults]objectForKey:@"yueban_recommend_type"];
 //        "1":邀请所有用户，现在就是随机20个用户，以后按照城市和运动类型筛选,"0":邀请我的好友，互粉的人
-        if ([str isEqualToString: @"1"] ) {
+        if (str == nil || [str isEqualToString: @"1"] ) {
             self.inviteDetailLabel.text = [NSString stringWithFormat:@"你 邀请 所有人 参加 %@",sport];
         }else {
             self.inviteDetailLabel.text = [NSString stringWithFormat:@"你 邀请 好友 参加 %@",sport];
@@ -61,8 +63,13 @@ static int minToSec = 60.0;
     }else{
         self.inviteDetailLabel.text = [NSString stringWithFormat:@"%@ 邀请 你 参加 %@",yuebanDetail.user_nickname,sport];
     }
+    
 ////    邀请信息
-    if (![yuebanDetail.yueban_voice_info isEqualToString:@""]) {
+    if (yuebanDetail.yueban_text_info) {
+        self.inviteMessageLabel.text = yuebanDetail.yueban_text_info;
+        self.voiceInfoBtn.hidden = YES;
+        self.inviteMessageLabel.hidden = NO;
+    } else {
         self.inviteMessageLabel.hidden = YES;
         self.voiceInfoBtn.hidden = NO;
 //        NSLog(@"%@",yuebanDetail.yueban_voice_second);
@@ -70,28 +77,25 @@ static int minToSec = 60.0;
             [self.voiceInfoBtn setTitle:yuebanDetail.yueban_voice_second forState:UIControlStateNormal];
         }
         
-//        self.inviteMessageLabel.text = yuebanDetail.yueban_voice_second;
+        //        self.inviteMessageLabel.text = yuebanDetail.yueban_voice_second;
         //设置语音button 长度 点击
-    }else {
-        self.inviteMessageLabel.text = yuebanDetail.yueban_text_info;
-        self.voiceInfoBtn.hidden = YES;
-        self.inviteMessageLabel.hidden = NO;
+
     }
-    
+
 //    self.inviteMessageLabel.text = @"季度卡哈斯的李开复哈利就发货的街道上发生的恢复了收到货了发生的克里斯的粉红色大发了啥地方和喀什地方考试方式拉斯克奖的哈佛哈佛卡的经适房哈克大街上可恢复上课的分开就圣诞节和方式的";
 //    self.inviteMessageLabel.hidden = NO;
 //            self.voiceInfoBtn.hidden = NO;
     
 //    邀请时间
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *givenTimeStr = [NSString stringWithFormat:@"%@",yuebanDetail.estimated_time];
     NSString *publishTimeStr = [NSString stringWithFormat:@"%@",yuebanDetail.create_time];
     NSDate *date = [NSDate date];
-    NSDate *givenTimeDate = [NSDate dateWithTimeIntervalSince1970:([givenTimeStr integerValue]/1000)];
+    NSDate *givenTimeDate = [NSDate dateWithTimeIntervalSince1970:[givenTimeStr integerValue]];
     NSDate *publishTimeDate = [NSDate dateWithTimeIntervalSince1970:([publishTimeStr integerValue]/1000)];
     NSComparisonResult compare = [date compare:givenTimeDate];
-    if (compare  == NSOrderedSame ||compare == NSOrderedDescending) {
+    if (compare  == NSOrderedSame || compare == NSOrderedDescending) {
 //        NSLog(@"yiyang de ");
         _sec=0;
         _min =0;

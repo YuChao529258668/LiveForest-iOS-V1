@@ -14,21 +14,6 @@
     self = [super init];
     if (self) {
         
-//    yueban_id:String约伴纪录id
-//    user_id:String约伴创建者id
-//    yueban_text_info:String约伴文本信息
-//    yueban_voice_info:String约伴语音地址
-//    yueban_user_city:String约伴创建者所在城市
-//    create_time:String约伴创建时间
-//    yueban_sport_id:String约伴运动类型
-//    user_nickname:String约伴创建者昵称
-//    user_logo_img_path:String约伴创建者头像
-//    user_sex:String约伴创建者性别
-//    user_introduction:String约伴创建者个人说明
-//    user_birthday:String约伴创建者生日时间戳
-//    estimated_time:String约伴创建者设置的约伴预计时间＋创建时间的结果的时间戳。用来算倒计时
-//    yueban_state:约伴状态,'1':进行中,'0':已停止约伴
-        
         self.attend_count = [dict objectForKey:@"attend_count"];
         self.create_time = [dict objectForKey:@"create_time"];
         self.estimated_time = [dict objectForKey:@"estimated_time"];
@@ -97,5 +82,48 @@
     }
     return  arrayM;
 }
+
+/// 用于演示
++ (HSMyYueBanDetailList *)test {
+    
+    //    yueban_id:String约伴纪录id
+    //    user_id:String约伴创建者id
+    //    yueban_text_info:String约伴文本信息
+    //    yueban_voice_info:String约伴语音地址
+    //    yueban_user_city:String约伴创建者所在城市
+    //    create_time:String约伴创建时间
+    //    yueban_sport_id:String约伴运动类型
+    //    user_nickname:String约伴创建者昵称
+    //    user_logo_img_path:String约伴创建者头像
+    //    user_sex:String约伴创建者性别
+    //    user_introduction:String约伴创建者个人说明
+    //    user_birthday:String约伴创建者生日时间戳
+    //    estimated_time:String约伴创建者设置的约伴预计时间＋创建时间的结果的时间戳。用来算倒计时
+    //    yueban_state:约伴状态,'1':进行中,'0':已停止约伴
+
+    HSMyYueBanDetailList *l = [HSMyYueBanDetailList new];
+    l.user_id = @"0";
+    l.yueban_id = @"0";
+    l.yueban_text_info = @"一起去拍照吧";
+    l.yueban_user_city = @"广州";
+    l.yueban_sport_id = @"13";
+    l.user_nickname = @"小红";
+    l.user_logo_img_path = @"http://p.store.itangyuan.com/p/chapter/attachment/etMsEgjseS/EgfwEgfSegAuEtjUE_EtETuh4bsOJgetjmilgNmii_EV87ocJn9L5Cb.jpg";
+    l.user_sex = @"女";
+    l.user_introduction = @"大美女";
+//    l.user_birthday = @"37198739879";
+    l.create_time = [NSString stringWithFormat:@"%f", [NSDate date].timeIntervalSince1970];
+    l.estimated_time = [NSString stringWithFormat:@"%f", [NSDate date].timeIntervalSince1970 + 3600];
+    l.yueban_state = @"1";
+    l.is_mine = @"1";
+    l.yueban_count = @"3";
+//    l.yuebanUserAndState = @"";
+    l.strangersArray = [HSYueBanUserInfoList test];
+    l.friendsArray = [HSYueBanUserInfoList test];
+    l.isDeal = NO;
+    
+    return l;
+}
+
 
 @end

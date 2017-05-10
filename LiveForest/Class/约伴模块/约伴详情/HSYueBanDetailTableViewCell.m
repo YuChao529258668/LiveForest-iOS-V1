@@ -12,6 +12,11 @@
 #import "HSDataFormatHandle.h"
 #import <RongIMKit/RongIMKit.h>
 #import "HSYueBanDetailViewController.h"
+
+@interface HSYueBanDetailTableViewCell ()
+@property (nonatomic, strong) RCConversationViewController *conversationVC;
+@end
+
 @implementation HSYueBanDetailTableViewCell
 
 @synthesize avatarImage;
@@ -22,6 +27,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
+    
     avatarImage.contentMode = UIViewContentModeScaleAspectFill;
     avatarImage.layer.cornerRadius = avatarImage.frame.size.height/2;
     avatarImage.clipsToBounds = YES;
@@ -65,6 +72,7 @@
     
     // 您需要根据自己的 App 选择场景触发聊天。这里的例子是一个 Button 点击事件。
     RCConversationViewController *conversationVC = [[RCConversationViewController alloc]init];
+    self.conversationVC = conversationVC;
     conversationVC.conversationType =ConversationType_PRIVATE; //会话类型，这里设置为 PRIVATE 即发起单聊会话。
     UIButton *btn = sender;
     NSLog(@"%@",btn.superview);
@@ -101,7 +109,9 @@
     //    [window insertSubview: nav.view aboveSubview:self.view];
 }
 
-
+- (void)backConversion {
+    [self.conversationVC dismissViewControllerAnimated:YES completion:nil];
+}
 
 +(id)ID{
     return @"HSFriendListViewCell";
