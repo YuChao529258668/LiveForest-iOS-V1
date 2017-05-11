@@ -97,11 +97,8 @@
 		0D7482A91EB5EA2A0040C829 /* HSFriendInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D747F491EB5EA290040C829 /* HSFriendInfo.m */; };
 		0D7482AA1EB5EA2A0040C829 /* HSImageResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D747F4C1EB5EA290040C829 /* HSImageResultController.m */; };
 		0D7482AB1EB5EA2A0040C829 /* HSShareActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D747F4E1EB5EA290040C829 /* HSShareActivityViewController.m */; };
-		0D7482AC1EB5EA2A0040C829 /* HSShareActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F4F1EB5EA290040C829 /* HSShareActivityViewController.xib */; };
 		0D7482AD1EB5EA2A0040C829 /* SimpleCameraComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D747F511EB5EA290040C829 /* SimpleCameraComponent.m */; };
-		0D7482AE1EB5EA2A0040C829 /* HSShareActivityViewController@2x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F531EB5EA290040C829 /* HSShareActivityViewController@2x.xib */; };
-		0D7482AF1EB5EA2A0040C829 /* HSShareActivityViewController@3x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F541EB5EA290040C829 /* HSShareActivityViewController@3x.xib */; };
-		0D7482B01EB5EA2A0040C829 /* HSShareActivityViewController@4s.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F551EB5EA290040C829 /* HSShareActivityViewController@4s.xib */; };
+		0D7482AE1EB5EA2A0040C829 /* HSShareActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F531EB5EA290040C829 /* HSShareActivityViewController.xib */; };
 		0D7482B11EB5EA2A0040C829 /* HSShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D747F571EB5EA290040C829 /* HSShareView.m */; };
 		0D7482B21EB5EA2A0040C829 /* ic_#.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F581EB5EA290040C829 /* ic_#.png */; };
 		0D7482B31EB5EA2A0040C829 /* ic_#_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D747F591EB5EA290040C829 /* ic_#_selected.png */; };
@@ -697,12 +694,9 @@
 		0D747F4C1EB5EA290040C829 /* HSImageResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSImageResultController.m; sourceTree = "<group>"; };
 		0D747F4D1EB5EA290040C829 /* HSShareActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSShareActivityViewController.h; sourceTree = "<group>"; };
 		0D747F4E1EB5EA290040C829 /* HSShareActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSShareActivityViewController.m; sourceTree = "<group>"; };
-		0D747F4F1EB5EA290040C829 /* HSShareActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSShareActivityViewController.xib; sourceTree = "<group>"; };
 		0D747F501EB5EA290040C829 /* SimpleCameraComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCameraComponent.h; sourceTree = "<group>"; };
 		0D747F511EB5EA290040C829 /* SimpleCameraComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCameraComponent.m; sourceTree = "<group>"; };
-		0D747F531EB5EA290040C829 /* HSShareActivityViewController@2x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "HSShareActivityViewController@2x.xib"; sourceTree = "<group>"; };
-		0D747F541EB5EA290040C829 /* HSShareActivityViewController@3x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "HSShareActivityViewController@3x.xib"; sourceTree = "<group>"; };
-		0D747F551EB5EA290040C829 /* HSShareActivityViewController@4s.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "HSShareActivityViewController@4s.xib"; sourceTree = "<group>"; };
+		0D747F531EB5EA290040C829 /* HSShareActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSShareActivityViewController.xib; sourceTree = "<group>"; };
 		0D747F561EB5EA290040C829 /* HSShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSShareView.h; sourceTree = "<group>"; };
 		0D747F571EB5EA290040C829 /* HSShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSShareView.m; sourceTree = "<group>"; };
 		0D747F581EB5EA290040C829 /* ic_#.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_#.png"; sourceTree = "<group>"; };
@@ -1813,7 +1807,6 @@
 				0D747F4C1EB5EA290040C829 /* HSImageResultController.m */,
 				0D747F4D1EB5EA290040C829 /* HSShareActivityViewController.h */,
 				0D747F4E1EB5EA290040C829 /* HSShareActivityViewController.m */,
-				0D747F4F1EB5EA290040C829 /* HSShareActivityViewController.xib */,
 				0D747F501EB5EA290040C829 /* SimpleCameraComponent.h */,
 				0D747F511EB5EA290040C829 /* SimpleCameraComponent.m */,
 			);
@@ -1823,9 +1816,7 @@
 		0D747F521EB5EA290040C829 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				0D747F531EB5EA290040C829 /* HSShareActivityViewController@2x.xib */,
-				0D747F541EB5EA290040C829 /* HSShareActivityViewController@3x.xib */,
-				0D747F551EB5EA290040C829 /* HSShareActivityViewController@4s.xib */,
+				0D747F531EB5EA290040C829 /* HSShareActivityViewController.xib */,
 				0D747F561EB5EA290040C829 /* HSShareView.h */,
 				0D747F571EB5EA290040C829 /* HSShareView.m */,
 				0D747F581EB5EA290040C829 /* ic_#.png */,
@@ -3724,7 +3715,6 @@
 				0D7483A41EB5EA2A0040C829 /* shanguangdeng.png in Resources */,
 				0D7484261EB5EA2A0040C829 /* loc.png in Resources */,
 				0D7483321EB5EA2A0040C829 /* HSActivityLargeCardTopCell.xib in Resources */,
-				0D7482AF1EB5EA2A0040C829 /* HSShareActivityViewController@3x.xib in Resources */,
 				0D7482A11EB5EA2A0040C829 /* ic_unfollow.png in Resources */,
 				0D7484A31EB5F1830040C829 /* HSVisitMineView.xib in Resources */,
 				0D7483A21EB5EA2A0040C829 /* paizhao.png in Resources */,
@@ -3815,7 +3805,6 @@
 				0D7482971EB5EA2A0040C829 /* HSOfficialView@6.xib in Resources */,
 				0D7482871EB5EA2A0040C829 /* HSMineCell.xib in Resources */,
 				0D7483041EB5EA2A0040C829 /* qr_focus.png in Resources */,
-				0D7482B01EB5EA2A0040C829 /* HSShareActivityViewController@4s.xib in Resources */,
 				0D7483D51EB5EA2A0040C829 /* HSMyInviteHistoryCell.xib in Resources */,
 				0D74842A1EB5EA2A0040C829 /* two.jpg in Resources */,
 				0D7483651EB5EA2A0040C829 /* HSRegisterViewController@2x.xib in Resources */,
@@ -3853,7 +3842,6 @@
 				0D74841F1EB5EA2A0040C829 /* avarl.jpg in Resources */,
 				0D7484301EB5EA2B0040C829 /* login_Icon.png in Resources */,
 				0D7482A81EB5EA2A0040C829 /* HSAtFriendViewController.xib in Resources */,
-				0D7482AC1EB5EA2A0040C829 /* HSShareActivityViewController.xib in Resources */,
 				0D7482881EB5EA2A0040C829 /* HSMineCell@2x.xib in Resources */,
 				0D74838F1EB5EA2A0040C829 /* ToolViewInputVoice@2x.png in Resources */,
 				0D7483CE1EB5EA2A0040C829 /* 同意按钮.png in Resources */,
@@ -3899,7 +3887,7 @@
 				0D7483A71EB5EA2A0040C829 /* shanguangdeng2@2x.png in Resources */,
 				0D7482981EB5EA2A0040C829 /* HSOfficialView@6P.xib in Resources */,
 				0D7483191EB5EA2A0040C829 /* HSCreatActivityViewController@2x.xib in Resources */,
-				0D7482AE1EB5EA2A0040C829 /* HSShareActivityViewController@2x.xib in Resources */,
+				0D7482AE1EB5EA2A0040C829 /* HSShareActivityViewController.xib in Resources */,
 				0D7483051EB5EA2A0040C829 /* 取景框.png in Resources */,
 				0D7484281EB5EA2A0040C829 /* Talk-50.png in Resources */,
 				0D74842F1EB5EA2B0040C829 /* background.jpg in Resources */,

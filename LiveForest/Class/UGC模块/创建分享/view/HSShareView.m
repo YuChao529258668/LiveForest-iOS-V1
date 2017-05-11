@@ -48,7 +48,7 @@
 //            arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"HSShareActivityViewController@3x" owner:self options:nil];
 //        }
         
-        arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"HSShareActivityViewController@2x" owner:self options:nil];
+        arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"HSShareActivityViewController" owner:self options:nil];
         
         self=arrayOfViews[0];
         

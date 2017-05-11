@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C2055" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
+        <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue-Bold</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSRelatedActivityVC">
@@ -26,61 +29,61 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8j-26-D72">
-                    <rect key="frame" x="8" y="22" width="44" height="44"/>
+                    <rect key="frame" x="6" y="30" width="26" height="26"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="D7u-5A-k9a"/>
-                        <constraint firstAttribute="height" constant="44" id="wA6-ph-uh5"/>
+                        <constraint firstAttribute="width" constant="26" id="GHa-bX-Z6O"/>
+                        <constraint firstAttribute="height" constant="26" id="JfV-bW-v18"/>
                     </constraints>
                     <state key="normal" image="ic_cancel2.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="back:" destination="-1" eventType="touchUpInside" id="UPO-Wa-7zM"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-HZ-FVF">
+                    <rect key="frame" x="0.0" y="66" width="320" height="488"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜索关联活动" id="fhc-2T-dL0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关联活动" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-Wv-MjG">
+                    <rect key="frame" x="124" y="31" width="72" height="22"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-D4-oYJ">
-                    <rect key="frame" x="268" y="20" width="44" height="44"/>
+                    <rect key="frame" x="288" y="30" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="0i3-lL-eTa"/>
+                        <constraint firstAttribute="width" constant="26" id="UXW-CW-3d0"/>
+                    </constraints>
                     <state key="normal" image="ic_confirm.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="confirm:" destination="-1" eventType="touchUpInside" id="g95-FL-AUf"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-HZ-FVF">
-                    <rect key="frame" x="0.0" y="66" width="320" height="488"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜索关联活动" id="fhc-2T-dL0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </searchBar>
-                </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关联活动" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-Wv-MjG">
-                    <rect key="frame" x="116" y="31" width="88" height="22"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="p8j-26-D72" firstAttribute="leading" secondItem="DQ7-Ns-ins" secondAttribute="leadingMargin" id="1C5-ED-5UO"/>
-                <constraint firstItem="W5U-Wv-MjG" firstAttribute="leading" secondItem="p8j-26-D72" secondAttribute="trailing" constant="64" id="1to-oE-jSa"/>
-                <constraint firstItem="p8j-26-D72" firstAttribute="top" secondItem="DQ7-Ns-ins" secondAttribute="top" constant="22" id="Pab-k7-rKq"/>
+                <constraint firstItem="p8j-26-D72" firstAttribute="top" secondItem="DQ7-Ns-ins" secondAttribute="top" constant="30" id="0CU-lf-O60"/>
+                <constraint firstItem="qpH-HZ-FVF" firstAttribute="top" secondItem="6bi-D4-oYJ" secondAttribute="bottom" constant="10" id="LMt-xe-nzS"/>
                 <constraint firstItem="qpH-HZ-FVF" firstAttribute="centerX" secondItem="W5U-Wv-MjG" secondAttribute="centerX" id="Phm-2Z-qWJ"/>
-                <constraint firstItem="6bi-D4-oYJ" firstAttribute="top" secondItem="DQ7-Ns-ins" secondAttribute="top" constant="20" id="QpD-H2-XeN"/>
-                <constraint firstItem="6bi-D4-oYJ" firstAttribute="trailing" secondItem="DQ7-Ns-ins" secondAttribute="trailingMargin" id="TTV-rh-AnI"/>
-                <constraint firstItem="qpH-HZ-FVF" firstAttribute="top" secondItem="6bi-D4-oYJ" secondAttribute="bottom" constant="2" id="aWb-oH-hW2"/>
+                <constraint firstAttribute="trailing" secondItem="6bi-D4-oYJ" secondAttribute="trailing" constant="6" id="c6X-eh-cqk"/>
                 <constraint firstAttribute="bottom" secondItem="qpH-HZ-FVF" secondAttribute="bottom" constant="14" id="dUA-0L-0aP"/>
-                <constraint firstItem="6bi-D4-oYJ" firstAttribute="leading" secondItem="W5U-Wv-MjG" secondAttribute="trailing" constant="64" id="gup-a9-m9Z"/>
                 <constraint firstItem="W5U-Wv-MjG" firstAttribute="centerX" secondItem="DQ7-Ns-ins" secondAttribute="centerX" id="io3-KG-ZqH"/>
-                <constraint firstItem="qpH-HZ-FVF" firstAttribute="top" secondItem="p8j-26-D72" secondAttribute="bottom" id="rnR-lS-48t"/>
+                <constraint firstItem="p8j-26-D72" firstAttribute="leading" secondItem="DQ7-Ns-ins" secondAttribute="leading" constant="6" id="tDo-Rl-Wj6"/>
                 <constraint firstItem="qpH-HZ-FVF" firstAttribute="leading" secondItem="DQ7-Ns-ins" secondAttribute="leading" id="txa-Qa-eGP"/>
                 <constraint firstItem="W5U-Wv-MjG" firstAttribute="top" secondItem="DQ7-Ns-ins" secondAttribute="top" constant="31" id="ybC-uS-8bL"/>
+                <constraint firstItem="6bi-D4-oYJ" firstAttribute="top" secondItem="DQ7-Ns-ins" secondAttribute="top" constant="30" id="z8M-oj-JwU"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="139" y="257"/>
         </view>
     </objects>

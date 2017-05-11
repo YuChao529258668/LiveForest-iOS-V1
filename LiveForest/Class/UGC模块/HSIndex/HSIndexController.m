@@ -101,8 +101,8 @@ static NSString * const reuseIdentifier = @"Cell";
     _officialArray = [NSMutableArray array];
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    dic[@"share_description"] = @"分享描述";
-    dic[@"user_nickname"] = @"用户昵称";
+    dic[@"share_description"] = @"分享描述分享描述分享描述";
+    dic[@"user_nickname"] = @"小红";
     dic[@"user_logo_img_path"] = @"http://imgtu.5011.net/uploads/content/20170309/2037731489026344.png";
     dic[@"share_img_path"] = @[@"http://www.kuaihou.com/uploads/allimg/130130/1-1301300103061P.jpg",
                                @"http://www.sznews.com/travel/images/attachement/jpg/site3/20150603/7427ea33bc7416d8b93b4c.jpg",
@@ -115,7 +115,7 @@ static NSString * const reuseIdentifier = @"Cell";
                                @"http://s3.sinaimg.cn/orignal/4c42990eaf4e962a49782"];
     
     dic[@"share_like_num"] = @"10";
-    dic[@"comment_count"] = @"10";
+    dic[@"comment_count"] = @"2";
     [_officialArray addObject: dic];
     [_officialArray addObject: dic];
     [_officialArray addObject: dic];
