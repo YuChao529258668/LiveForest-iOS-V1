@@ -589,7 +589,7 @@
     //    [TuSDK setLogLevel:lsqLogLevelDEBUG];
     
     // 初始化SDK (请前往 http://tusdk.com 申请秘钥)
-    [TuSDK initSdkWithAppKey:@"3f16e3a713b95f08-00-v6lqn1"];  //co.hoteam.liveforest
+    [TuSDK initSdkWithAppKey:@"3507e9e7b3ffcbd4-00-jriln1"];  //co.hoteam.liveforest
 //    [TuSDK initSdkWithAppKey:@"091ff6046847f5f6-00-v6lqn1"]; //com.lf
 
 }
