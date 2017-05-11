@@ -95,7 +95,11 @@ static float factorMin=1;
 static NSString * const reuseIdentifier = @"Cell";
 static NSString * const reuseIdentifierBottom = @"CellBottom";
 
-#pragma mark
+#pragma mark - 
+- (void)dealloc {
+    [self removeObserver];
+}
+
 - (instancetype)init {
     self=[super init];
     if (self) {
@@ -248,7 +252,7 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
 //
 //}
 
-#pragma mark <UICollectionViewDataSource>
+#pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -260,171 +264,9 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     return controllerNameArray.count;
 }
 
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    UICollectionViewCell *cell;
-//    if (collectionView==self.rootCollectionView) {
-//        cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//        switch (indexPath.row) {
-//            case 0:
-//                self.indexController.indexView.frame=self.rootCollectionView.frame;
-//                [cell.contentView addSubview:self.indexController.view];
-//                break;
-//            case 1:
-//                self.activityController.activityView.frame=self.rootCollectionView.frame;
-//                [cell.contentView addSubview:self.activityController.view];
-//                break;
-////            case 2:
-////                self.mineController.mineView.frame=self.rootCollectionView.frame;
-////                [cell.contentView addSubview:self.mineController.view];
-////                break;
-//            case 2:
-//                self.groupController.chatView.frame=self.rootCollectionView.frame;
-//                [cell.contentView addSubview:self.groupController.view];
-//                break;
-//            default:
-//                break;
-//        }
-//    } else if(collectionView==self.bottomCollectionView){
-////        UIScrollView *scrollView;
-////        CGRect frame=self.indexController.scrollView.frame;
-////        frame.origin.x=0;
-////        frame.origin.y=0;
-//
-//        cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifierBottom forIndexPath:indexPath];
-////        switch (indexPath.row) {
-////            case 0:
-////                scrollView=[self createScrollViewWithCollectionView:self.indexController.collectionView];
-////                break;
-////            case 1:
-////                scrollView=[self createScrollViewWithCollectionView:self.activityController.collectionView];
-////                break;
-////            case 2:
-////                scrollView=[self createScrollViewWithCollectionView:self.mineController.collectionView];
-////                break;
-////            case 3:
-////                scrollView=[self createScrollViewWithCollectionView:self.groupController.collectionView];
-////                break;
-////            default:
-////                break;
-////        }
-//////        NSLog(@"%@",scrollView);
-////        [cell.contentView addSubview:scrollView];
-//
-////        CGRect frame=self.indexController.scrollView.frame;
-////        frame.origin.x=0;
-////        frame.origin.y=0;
-////
-////        switch (indexPath.row) {
-////            case 0:
-////                self.indexController.scrollView.frame=frame;
-////                [cell.contentView addSubview:self.indexController.scrollView];
-////                break;
-////            case 1:
-////                self.activityController.scrollView.frame=frame;
-////                [cell.contentView addSubview:self.activityController.scrollView];
-////                break;
-////            case 2:
-////                self.mineController.scrollView.frame=frame;
-////                [cell.contentView addSubview:self.mineController.scrollView];
-////                break;
-////            case 3:
-////                self.groupController.scrollView.frame=frame;
-////                [cell.contentView addSubview:self.groupController.scrollView];
-////                break;
-////            default:
-////                break;
-////        }
-//    }
-//
-//    return cell;
-//}
 
-#pragma mark <UICollectionViewDelegate>
-
-/*
- // Uncomment this method to specify if the specified item should be highlighted during tracking
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
- }
- */
-
-/*
- // Uncomment this method to specify if the specified item should be selected
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
-
-/*
- // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
- }
- 
- - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
- }
- 
- - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
- }
- */
-
-
-
-#pragma mark UICollectionViewDelegateFlowLayout <UICollectionViewDelegate>
-//@optional
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
-
-
-#pragma mark
-#pragma mark 《手势动画相关》
-//#pragma mark <初始化collectionview和scrollView>
-//-(UIScrollView *)createScrollViewWithCollectionView:(UICollectionView *)collectionView {
-//
-//    //cell、collectionView、 scrollView与屏幕同高。
-//    //cell、scrollView和屏幕一样大，collectionView的宽度是cell的n倍。
-//    //scrollView的contentSize是collectionView的frame。
-//    //collectionView添加到scrollView后，scrollView缩小为0.45
-//
-//    //初始化scrollView
-//    UIScrollView *scrollView;
-//    float scrollViewHeight=kScreenHeight*0.45;
-////    float scrollViewY=kScreenHeight-scrollViewHeight;
-//    float scrollViewY=0;
-//    CGRect scrollViewFrame=CGRectMake(0, scrollViewY, kScreenWidth, scrollViewHeight);
-//    scrollView=[[UIScrollView alloc]initWithFrame:scrollViewFrame];
-//
-//    scrollView.contentSize=collectionView.frame.size;//设置滑动的范围
-//    scrollView.pagingEnabled=NO;
-//    scrollView.showsHorizontalScrollIndicator=YES;
-//    scrollView.clipsToBounds=NO;//不裁剪越界的collectionView，这样就不用在手势过程中修改宽度了
-//
-//    //添加pan手势给scrollView
-//    self.panGestureRecognizerScollView=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePanScollView:)];
-//    self.panGestureRecognizerScollView.delegate=self;
-//
-//    [scrollView addGestureRecognizer:self.panGestureRecognizerScollView];
-////    [scrollView addSubview:self.indexController.collectionView];
-////    [self.view addSubview:self.scrollView];
-//    [scrollView addSubview:collectionView];
-//    return scrollView;
-//    //缩小scrollView，摆正位置，把缩小后的scrollView的宽度增大到与屏幕同宽
-//    //    factor=factorMin;
-//    //    self.scrollView.transform=CGAffineTransformMakeScale(factor,factor);
-//    //    scrollViewFrame.origin.x=0;
-//    //    scrollViewFrame.origin.y=kScreenHeight-self.scrollView.frame.size.height;
-//    //    scrollViewFrame.size.width=kScreenWidth;
-//    //    self.scrollView.frame=scrollViewFrame;
-//}
-
-#pragma mark <pan手势是否开始>
+#pragma mark - 手势动画
+#pragma mark pan手势是否开始
 //要设置手势的delegate=self
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
     NSLog(@"HSViewController 判断手势是否开始");
@@ -641,7 +483,7 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
 //
 //}
 
-#pragma mark <pan手势处理ScollView>
+#pragma mark pan手势处理ScollView
 
 - (void)handlePanScollView:(UIPanGestureRecognizer *)sender {
     
@@ -809,6 +651,7 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     }
 }
 
+#pragma mark -
 -(void)viewWillDisappear:(BOOL)animated {
     NSLog(@"rootview WillDisappear");
 }
@@ -865,6 +708,8 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
 - (void)viewDidDisappear:(BOOL)animated{
     NSLog(@"root view did disappear");
 }
+
+#pragma mark -
 
 #pragma mark <点击一个cell>
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -944,8 +789,9 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     //        [cell setSubviewsAlphaWithFactor:factor];
     //    }
 }
-#pragma mark 《手势动画结束》
-#pragma mark
+
+
+#pragma mark - UIScrollViewDelegate
 
 //scrollView滚动时，就调用该方法。任何offset值改变都调用该方法。即滚动过程中，调用多次
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -1022,7 +868,6 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     
 }
 
-//- scro
 // 滑动视图，当手指离开屏幕那一霎那，调用该方法。一次有效滑动，只执行一次。
 // decelerate,指代，当我们手指离开那一瞬后，视图是否还将继续向前滚动（一段距离），经过测试，decelerate=YES
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -1059,54 +904,6 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     
 }
 
-//#pragma mark 啪啪啪
-//- (void)addScrollViews {
-//    [self.view addSubview: self.indexController.scrollView];
-//    [self.view addSubview: self.activityController.scrollView];
-////    [self.view addSubview: self.mineController.scrollView];
-//    [self.view addSubview: self.groupController.scrollView];
-////    [self.bottomCollectionView removeFromSuperview];
-////    [self calculatScrollViewsFrameWithTag:0];
-//    [self calculatFramesWithoutAnimation];
-//}
-
-#pragma mark 计算各个控制器的frame
-//- (void)calculatScrollViewsFrameWithTag:(int)n {
-//
-//    [UIView animateWithDuration:0.2 animations:^{
-//        CGRect f=self.indexController.scrollView.frame;
-//
-//        f.origin.x=-n*kScreenWidth;
-//        self.indexController.scrollView.frame=f;
-//
-//        f.origin.x+=kScreenWidth;
-//        self.activityController.scrollView.frame=f;
-//
-////        f.origin.x+=kScreenWidth;
-////        self.mineController.scrollView.frame=f;
-//
-//        f.origin.x+=kScreenWidth;
-//        self.groupController.scrollView.frame=f;
-//
-//    }];
-//}
-
-//- (void)calculatFramesWithoutAnimation {
-//
-//    CGRect f=self.indexController.scrollView.frame;
-//
-//    f.origin.x=0;
-//    self.indexController.scrollView.frame=f;
-//
-//    f.origin.x+=kScreenWidth;
-//    self.activityController.scrollView.frame=f;
-//
-////    f.origin.x+=kScreenWidth;
-////    self.mineController.scrollView.frame=f;
-//
-//    f.origin.x+=kScreenWidth;
-//    self.groupController.scrollView.frame=f;
-//}
 
 // 滚动视图减速完成，滚动将停止时，调用该方法。一次有效滑动，只执行一次。
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -1170,7 +967,7 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     NSLog(@"scrollViewDidScrollToTop");
 }
 
-#pragma mark 注册通知
+#pragma mark - 注册和移除通知
 - (void)addObserver {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(backBtnClick) name:@"backBtnClick" object:nil];
     
@@ -1183,7 +980,11 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(headerViewClick) name:@"headerViewClick" object:nil];
     
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(removeCoverBtn) name:@"HSViewControllerWillCoverNotification" object:nil];
+}
+
+- (void)removeObserver {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark 聊天界面的返回按钮
@@ -1425,6 +1226,7 @@ static NSString * const reuseIdentifierBottom = @"CellBottom";
     }];
 }
 
+#pragma mark 移除覆盖按钮
 ///  让 HSSettingViewController 调用 performSelector 的时候调用
 - (void)removeCoverBtn {
     [coverBtn removeFromSuperview];

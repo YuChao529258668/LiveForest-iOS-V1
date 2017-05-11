@@ -89,6 +89,16 @@ int cellNumber=5;//定义行数
     [self.view addSubview:settingTableView];
 }
 
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    
+//    UIWindow *appWindow = [[UIApplication sharedApplication] keyWindow];
+//
+//    // 这里的 rootViewController 就是 HSViewController。让其移除上面的按钮(点击会让它的 y = 0)
+//    [appWindow.rootViewController performSelector:@selector(removeCoverBtn) withObject:nil afterDelay:0];
+//
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -309,6 +319,9 @@ int cellNumber=5;//定义行数
         qr = [[HSQRDisplayVC alloc] init];
         [self show:qr.view];
     }
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:@"HSViewControllerWillCoverNotification" object:nil];
 }
 
 #pragma mark feedbackBack
@@ -342,8 +355,8 @@ int cellNumber=5;//定义行数
         appWindow.rootViewController.view.frame = frame;
         
     }completion:^(BOOL finished) {
-        // 这里的 rootViewController 就是 HSViewController。让其移除上面的按钮(点击会让它的 y = 0)
-        [appWindow.rootViewController performSelector:@selector(removeCoverBtn) withObject:nil afterDelay:0];
+//        // 这里的 rootViewController 就是 HSViewController。让其移除上面的按钮(点击会让它的 y = 0)
+//        [appWindow.rootViewController performSelector:@selector(removeCoverBtn) withObject:nil afterDelay:0];
     }];
 
 }

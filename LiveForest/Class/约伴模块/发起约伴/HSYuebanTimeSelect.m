@@ -44,7 +44,7 @@
         _dataPicker = [[UIDatePicker alloc]init];
         CGFloat dataPickerH = _dataPicker.bounds.size.height;
         CGFloat dataPickerY = self.bounds.size.height - dataPickerH;
-        _dataPicker.frame = CGRectMake(0, dataPickerY,_dataPicker.bounds.size.width,dataPickerH);
+        _dataPicker.frame = CGRectMake(0, dataPickerY,self.bounds.size.width,dataPickerH);
         _dataPicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
         _dataPicker.datePickerMode = UIDatePickerModeCountDownTimer;
         
@@ -80,7 +80,7 @@
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, toolViewH)];
         
         label.center = CGPointMake(_toolView.bounds.size.width * 0.5,_toolView.bounds.size.height * 0.5);
-        label.text = @"约伴有效时间选择";
+        label.text = @"时间选择";
         label.font = [UIFont systemFontOfSize:15.0];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor redColor];
