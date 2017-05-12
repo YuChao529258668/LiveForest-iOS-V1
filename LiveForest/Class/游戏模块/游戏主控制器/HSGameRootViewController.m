@@ -194,7 +194,8 @@ static NSString *reuseIdentifier = @"HSGameCell";
 //    }];
     
     //启动Cordova服务
-    [[CordovaService getSingletonInstance] startPage:@"game.html" fromViewController:self];
+//    [[CordovaService getSingletonInstance] startPage:@"game.html" fromViewController:self];
+    [[CordovaService getSingletonInstance] startPage:@"game.html" fromViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
 @end
