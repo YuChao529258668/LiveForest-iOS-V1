@@ -2,7 +2,7 @@
 
 活力森林，创业项目的第一个版本，做的运动社交。
 
-已经从 App Store 下架，后台已挂，第三方库的 app key 也过期了。
+已经从 App Store 下架，后台已挂。
 
 代码可以运行，构造了大部分假数据。
 
@@ -24,7 +24,11 @@
 
 手势要考虑的东西很多，比如缩小时可以跟着手指离开屏幕边缘很远，缩放过程中可以跟着手指左右移动，放大结束后显示哪一个卡片，缩放过程中子控件的透明度变化，卡片放大后和 UITableView 的滚动手势冲突，以及屏幕适配等等。
 
-这是运行效果的视频：
+这是优酷的运行效果视频：
+
+http://v.youku.com/v_show/id_XMjc1OTgyNzE1Mg==.html?spm=a2h3j.8428770.3416059.1
+
+或者从 github 下载视频：
 
 https://github.com/YuChao529258668/resource-for-readme.md/blob/master/LiveForest-iOS-V1/LiveForest.mp4
 
@@ -36,7 +40,6 @@ https://github.com/YuChao529258668/resource-for-readme.md/blob/master/LiveForest
 这是项目结构：
 
 ![项目结构](https://github.com/YuChao529258668/resource-for-readme.md/blob/master/LiveForest-iOS-V1/项目结构.png)
-
 
 
 ## 关于代码质量
